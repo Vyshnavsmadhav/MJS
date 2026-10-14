@@ -69,7 +69,7 @@ export default function ContactPage() {
               lineHeight: 1.1,
               letterSpacing: '-0.02em'
             }}>
-              Let's Build<br/>What's Next.
+              Let&apos;s Build<br/>What&apos;s Next.
             </h1>
 
             {/* Description */}
@@ -80,7 +80,7 @@ export default function ContactPage() {
               lineHeight: 1.6,
               fontWeight: 300
             }}>
-              We're here to listen, understand and support your business with the right solutions.
+              We&apos;re here to listen, understand and support your business with the right solutions.
             </p>
           </div>
 
