@@ -37,27 +37,30 @@ export default function HeaderNavbar() {
   ];
 
   return (
-    <header style={{ 
-      position: 'fixed', 
-      top: 0, 
-      left: 0,
-      right: 0,
-      backgroundColor: 'rgba(224, 240, 252, 0.88)', 
-      backdropFilter: 'blur(20px)',
-      WebkitBackdropFilter: 'blur(20px)',
-      color: '#0A1E3A',
-      padding: '0.95rem 5%',
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      zIndex: 1000,
-      borderBottom: '1px solid rgba(140, 185, 222, 0.45)',
-      boxShadow: showNavbar ? '0 10px 30px -6px rgba(45, 95, 145, 0.16)' : 'none',
-      transform: showNavbar ? 'translateY(0)' : 'translateY(-100%)',
-      opacity: showNavbar ? 1 : 0,
-      transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease',
-      pointerEvents: showNavbar ? 'auto' : 'none'
-    }}>
+    <header 
+      className="header-container"
+      style={{ 
+        position: 'fixed', 
+        top: 0, 
+        left: 0,
+        right: 0,
+        backgroundColor: 'rgba(224, 240, 252, 0.88)', 
+        backdropFilter: 'blur(20px)',
+        WebkitBackdropFilter: 'blur(20px)',
+        color: '#0A1E3A',
+        padding: '0.95rem 5%',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        zIndex: 1000,
+        borderBottom: '1px solid rgba(140, 185, 222, 0.45)',
+        boxShadow: showNavbar ? '0 10px 30px -6px rgba(45, 95, 145, 0.16)' : 'none',
+        transform: showNavbar ? 'translateY(0)' : 'translateY(-100%)',
+        opacity: showNavbar ? 1 : 0,
+        transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease',
+        pointerEvents: showNavbar ? 'auto' : 'none'
+      }}
+    >
       {/* Brand Logo with Gold Monogram Accent */}
       <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none' }}>
         <div style={{
@@ -88,18 +91,21 @@ export default function HeaderNavbar() {
       </Link>
       
       {/* Navigation Tiles - Preserving Exact Arrangement & Names */}
-      <nav style={{ 
-        display: 'flex', 
-        gap: '0.4rem', 
-        fontSize: '0.88rem', 
-        fontWeight: 600, 
-        alignItems: 'center',
-        backgroundColor: 'rgba(255, 255, 255, 0.7)',
-        padding: '0.35rem 0.5rem',
-        borderRadius: '999px',
-        border: '1px solid rgba(140, 185, 222, 0.5)',
-        boxShadow: '0 2px 10px rgba(70, 120, 170, 0.08)'
-      }}>
+      <nav 
+        className="nav-center-dock"
+        style={{ 
+          display: 'flex', 
+          gap: '0.4rem', 
+          fontSize: '0.88rem', 
+          fontWeight: 600, 
+          alignItems: 'center',
+          backgroundColor: 'rgba(255, 255, 255, 0.7)',
+          padding: '0.35rem 0.5rem',
+          borderRadius: '999px',
+          border: '1px solid rgba(140, 185, 222, 0.5)',
+          boxShadow: '0 2px 10px rgba(70, 120, 170, 0.08)'
+        }}
+      >
         {navItems.map((item) => {
           const isActive = pathname === item.path;
           return (

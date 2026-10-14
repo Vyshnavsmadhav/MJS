@@ -295,7 +295,7 @@ export default function ServicesPage() {
               <span style={{ fontSize: '0.75rem', fontWeight: 600, color: '#8A97A8', letterSpacing: '0.1em' }}>05 SERVICES</span>
             </div>
 
-            <div className={mounted ? 'animate-fade-in-up stagger-2' : ''} style={{ 
+            <div className={`vat-grid-custom ${mounted ? 'animate-fade-in-up stagger-2' : ''}`} style={{ 
               display: 'grid', 
               gridTemplateColumns: 'repeat(6, 1fr)', 
               gap: '1.5rem' 
@@ -303,6 +303,7 @@ export default function ServicesPage() {
               {taxServices.slice(0, 5).map((service, index) => (
                 <div 
                   key={index}
+                  className="vat-card-wrapper"
                   style={{
                     gridColumn: index < 3 ? 'span 2' : 'span 3'
                   }}

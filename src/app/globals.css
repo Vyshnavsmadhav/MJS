@@ -128,3 +128,27 @@ button {
   100% { transform: scale(1.05); }
 }
 
+/* Responsive Utilities */
+@media (max-width: 900px) {
+  .vat-grid-custom {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .vat-card-wrapper {
+    grid-column: span 1 !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .vat-grid-custom {
+    grid-template-columns: 1fr !important;
+  }
+  .vat-card-wrapper {
+    grid-column: span 1 !important;
+  }
+  .nav-center-dock {
+    display: none !important;
+  }
+  .header-container {
+    padding: 0.8rem 1rem !important;
+  }
+}
