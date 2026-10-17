@@ -1,7 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import ServiceDetailsCard from '@/components/ServiceDetailsCard';
 
 export default function ServicesPage() {
   const [mounted, setMounted] = useState(false);
@@ -12,17 +11,6 @@ export default function ServicesPage() {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
-
-  const taxServices = [
-    { number: '01', title: 'VAT Registration', description: 'Assistance with VAT registration and related formalities.' },
-    { number: '02', title: 'VAT Return Filing', description: 'Timely and accurate preparation and filing of VAT returns.' },
-    { number: '03', title: 'VAT Health Checks', description: 'Review of VAT compliance and identification of potential issues.' },
-    { number: '04', title: 'VAT Advisory Services', description: 'Ongoing advisory on VAT matters and best practices.' },
-    { number: '05', title: 'VAT Refund Services', description: 'Support with VAT refund claims and related processes.' },
-    { number: '06', title: 'Corporate Tax Registration', description: 'Assistance with Corporate Tax registration and related formalities.' },
-    { number: '07', title: 'Corporate Tax Filing', description: 'Preparation and filing of Corporate Tax returns.' },
-    { number: '08', title: 'Corporate Tax Advisory & Compliance', description: 'Advisory and compliance support for Corporate Tax.' },
-  ];
 
   return (
     <main style={{ display: 'flex', flexDirection: 'column' }}>
@@ -52,7 +40,7 @@ export default function ServicesPage() {
         <div style={{
           position: 'absolute',
           top: 0, left: 0, right: 0, bottom: 0,
-          background: 'linear-gradient(90deg, rgba(7,29,43,0.95) 0%, rgba(7,29,43,0.7) 50%, rgba(7,29,43,0.3) 100%)',
+          background: 'linear-gradient(90deg, rgba(7,29,43,0.95) 0%, rgba(7,29,43,0.75) 50%, rgba(7,29,43,0.3) 100%)',
           zIndex: 2
         }} />
 
@@ -67,7 +55,7 @@ export default function ServicesPage() {
               marginBottom: '1rem',
               fontWeight: 400
             }}>
-              Home &nbsp;/&nbsp; Services &nbsp;/&nbsp; <span style={{ color: '#fff' }}>Tax Services</span>
+              Home &nbsp;/&nbsp; Services &nbsp;/&nbsp; <span style={{ color: '#fff' }}>Tax, Accounting &amp; Advisory</span>
             </div>
 
             {/* Headline */}
@@ -78,25 +66,25 @@ export default function ServicesPage() {
               lineHeight: 1.1,
               letterSpacing: '-0.02em'
             }}>
-              Tax Services
+              Services &amp; Practice Areas
             </h1>
 
             {/* Description */}
             <p style={{
-              fontSize: '1rem',
+              fontSize: '1.05rem',
               color: 'rgba(255,255,255,0.85)',
               lineHeight: 1.6,
-              fontWeight: 300
+              fontWeight: 300,
+              maxWidth: '620px'
             }}>
-              Expert guidance. Complete compliance. Greater confidence.
+              Specialized Tax Advisory and Complete Accounting &amp; Bookkeeping solutions designed to ensure regulatory compliance and operational excellence in the UAE.
             </p>
           </div>
 
-
-
         </div>
       </section>
-       {/* SECTION — HIERARCHY SERVICES SHOWCASE (PINNED IMAGE & SERVICE TREE) */}
+
+      {/* SECTION — HIERARCHY SERVICES SHOWCASE (PINNED IMAGE & SERVICE TREE) */}
       <section style={{ 
         backgroundColor: '#fff', 
         padding: '4rem 5% 5rem', 
@@ -230,11 +218,11 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* SECTION — TAX SERVICES PORTFOLIO */}
-      <section style={{ backgroundColor: '#F8FAFC', padding: '6rem 5% 7rem', borderTop: '1px solid rgba(10, 19, 37, 0.05)' }}>
-        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+      {/* SECTION — CORE PRACTICE DIVISIONS (HIERARCHY ARCHITECTURE DESIGN) */}
+      <section style={{ backgroundColor: '#F8FAFC', padding: '6.5rem 5% 7.5rem', borderTop: '1px solid rgba(10, 19, 37, 0.05)' }}>
+        <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
           
-          {/* Header & Mission Statement: Balanced 2-Column Editorial Layout */}
+          {/* Section Header */}
           <div className={mounted ? 'animate-fade-in-up stagger-1' : ''} style={{ 
             display: 'grid', 
             gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', 
@@ -245,109 +233,480 @@ export default function ServicesPage() {
             borderBottom: '1px solid rgba(10, 19, 37, 0.08)'
           }}>
             <div>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', padding: '0.35rem 0.85rem', backgroundColor: 'rgba(212, 183, 118, 0.12)', borderRadius: '20px', marginBottom: '1.25rem' }}>
-                <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--color-accent)' }}></span>
-                <span style={{ fontSize: '0.72rem', letterSpacing: '0.18em', color: '#8A6D24', fontWeight: 700 }}>PRACTICE AREA OVERVIEW</span>
-              </div>
               
               <h2 style={{ fontSize: 'clamp(2.2rem, 3.2vw, 3rem)', color: 'var(--color-primary)', lineHeight: 1.15, letterSpacing: '-0.02em', margin: 0 }}>
-                Supporting Your Business<br/>
-                Through a <span style={{ color: 'var(--color-secondary)', fontStyle: 'italic', fontFamily: 'var(--font-heading)' }}>Changing Tax Landscape</span>
+                Service Architecture<br/>
+                &amp; <span style={{ color: 'var(--color-secondary)', fontStyle: 'italic', fontFamily: 'var(--font-heading)' }}>Practice Hierarchy</span>
               </h2>
             </div>
 
             <div>
-              <p style={{ fontSize: '1.05rem', color: '#4B5868', lineHeight: 1.75, margin: '0 0 1.5rem', fontWeight: 400 }}>
-                We provide end-to-end VAT and Corporate Tax advisory, registration, and ongoing compliance services to help UAE enterprises operate with confidence in a modern regulatory environment.
+              <p style={{ fontSize: '1.05rem', color: '#4B5868', lineHeight: 1.75, margin: 0, fontWeight: 400 }}>
+                Structured across four specialized practice disciplines — <strong>Tax Services</strong>, <strong>Accounting &amp; Bookkeeping</strong>, <strong>Business Consultancy</strong>, and <strong>Other Services</strong> — delivering precision, compliance, and end-to-end strategic clarity for UAE companies.
               </p>
-              
-              <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-                  <span style={{ fontSize: '1.4rem', fontWeight: 700, color: 'var(--color-primary)', fontFamily: 'var(--font-heading)' }}>08</span>
-                  <span style={{ fontSize: '0.8rem', color: '#6A788A', lineHeight: 1.2 }}>Specialized<br/>Workstreams</span>
-                </div>
-                <div style={{ width: '1px', height: '32px', backgroundColor: 'rgba(10, 19, 37, 0.1)' }}></div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-                  <span style={{ fontSize: '1.4rem', fontWeight: 700, color: '#A47E2A', fontFamily: 'var(--font-heading)' }}>100%</span>
-                  <span style={{ fontSize: '0.8rem', color: '#6A788A', lineHeight: 1.2 }}>FTA Regulatory<br/>Compliance</span>
-                </div>
-                <div style={{ width: '1px', height: '32px', backgroundColor: 'rgba(10, 19, 37, 0.1)' }}></div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-                  <span style={{ fontSize: '1.4rem', fontWeight: 700, color: 'var(--color-primary)', fontFamily: 'var(--font-heading)' }}>UAE</span>
-                  <span style={{ fontSize: '0.8rem', color: '#6A788A', lineHeight: 1.2 }}>Jurisdiction<br/>Specialists</span>
-                </div>
-              </div>
             </div>
           </div>
 
-          {/* Group 1: Value Added Tax (VAT) Services */}
-          <div style={{ marginBottom: '4rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.75rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                <div style={{ width: '32px', height: '32px', borderRadius: '8px', backgroundColor: '#0A1325', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#D4B776' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                </div>
-                <div>
-                  <h3 style={{ fontSize: '1.35rem', color: 'var(--color-primary)', margin: 0, fontWeight: 600 }}>Value Added Tax (VAT)</h3>
-                  <span style={{ fontSize: '0.8rem', color: '#778494' }}>Registration, returns, refund assistance & regular health checks</span>
+          {/* HIERARCHY ARCHITECTURE TREE */}
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
+            
+            {/* Top Root Node */}
+            <div style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '1.25rem',
+              backgroundColor: '#0A1325',
+              color: '#FFFFFF',
+              padding: '1.2rem 2.5rem',
+              borderRadius: '999px',
+              border: '1px solid rgba(212, 183, 118, 0.4)',
+              boxShadow: '0 12px 30px rgba(10, 19, 37, 0.15)',
+              zIndex: 3
+            }}>
+              <div style={{
+                width: '10px',
+                height: '10px',
+                borderRadius: '50%',
+                backgroundColor: '#D4B776',
+                boxShadow: '0 0 12px #D4B776'
+              }} />
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <span style={{ fontSize: '0.68rem', letterSpacing: '0.22em', color: '#D4B776', fontWeight: 700, textTransform: 'uppercase' }}>
+                  MJS GLOBAL CORE PRACTICE
+                </span>
+                <span style={{ fontSize: '1.15rem', fontWeight: 600, fontFamily: 'var(--font-heading)', letterSpacing: '0.02em' }}>
+                  Client Advisory &amp; Assurance Framework
+                </span>
+              </div>
+              <span style={{
+                backgroundColor: 'rgba(212, 183, 118, 0.18)',
+                color: '#D4B776',
+                fontSize: '0.72rem',
+                fontWeight: 700,
+                padding: '0.25rem 0.75rem',
+                borderRadius: '20px',
+                marginLeft: '0.5rem',
+                letterSpacing: '0.08em'
+              }}>
+                18 WORKSTREAMS
+              </span>
+            </div>
+
+            {/* Vertical Stem from Root Node */}
+            <div style={{ width: '2px', height: '40px', backgroundColor: '#152845', opacity: 0.35 }}></div>
+
+            {/* Top Horizontal Distribution Rail for 4 Branches */}
+            <div style={{ width: '100%', position: 'relative', display: 'flex', justifyContent: 'center' }}>
+              <div style={{
+                position: 'absolute',
+                top: 0,
+                left: '12.5%',
+                right: '12.5%',
+                height: '2px',
+                backgroundColor: '#152845',
+                opacity: 0.25
+              }} />
+            </div>
+
+            {/* 4 Classification Pillars with Hierarchy Connectors */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(310px, 1fr))',
+              gap: '2rem',
+              width: '100%',
+              alignItems: 'stretch'
+            }}>
+
+              {/* BRANCH 01 — TAX SERVICES */}
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                {/* Branch vertical connector from rail */}
+                <div style={{ width: '2px', height: '28px', backgroundColor: '#152845', opacity: 0.25 }}></div>
+                <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#D4B776', marginTop: '-4px', marginBottom: '0.75rem' }}></div>
+
+                {/* Classification Node Card */}
+                <div style={{
+                  width: '100%',
+                  height: '100%',
+                  backgroundColor: '#0A1325',
+                  borderRadius: '16px',
+                  padding: '2.2rem 2rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  border: '1px solid rgba(255, 255, 255, 0.08)',
+                  boxShadow: '0 12px 28px rgba(10, 19, 37, 0.08)',
+                  position: 'relative',
+                  overflow: 'hidden'
+                }}>
+                  {/* Subtle Glow */}
+                  <div style={{
+                    position: 'absolute',
+                    top: '-30px',
+                    right: '-30px',
+                    width: '120px',
+                    height: '120px',
+                    borderRadius: '50%',
+                    background: 'radial-gradient(circle, rgba(212,183,118,0.18) 0%, rgba(212,183,118,0) 70%)',
+                    pointerEvents: 'none'
+                  }} />
+
+
+                  <h3 style={{
+                    fontSize: '1.75rem',
+                    color: '#ffffff',
+                    margin: '0 0 0.75rem',
+                    fontFamily: 'var(--font-heading)',
+                    fontWeight: 600,
+                    letterSpacing: '-0.01em',
+                    lineHeight: 1.2
+                  }}>
+                    Tax Services
+                  </h3>
+
+                  <div style={{ width: '50px', height: '2px', backgroundColor: '#D4B776', marginBottom: '1.75rem' }}></div>
+
+                  {/* Hierarchy Tree Stem for Workstreams */}
+                  <div style={{
+                    borderLeft: '2px solid rgba(212, 183, 118, 0.35)',
+                    marginLeft: '0.4rem',
+                    paddingLeft: '1.25rem',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '1rem',
+                    flexGrow: 1
+                  }}>
+                    {[
+                      'VAT REGISTRATION',
+                      'VAT REFUND SERVICES',
+                      'VAT RETURN FILING',
+                      'CORPORATE TAX REGISTRATION',
+                      'VAT HEALTH CHECKS',
+                      'CORPORATE TAX FILING',
+                      'VAT ADVISORY SERVICES',
+                      'CORPORATE TAX ADVISORY'
+                    ].map((item, idx) => (
+                      <div key={idx} style={{ display: 'flex', alignItems: 'center', position: 'relative' }}>
+                        {/* Branch connector line and node dot */}
+                        <div style={{
+                          position: 'absolute',
+                          left: '-1.25rem',
+                          width: '1rem',
+                          height: '1.5px',
+                          backgroundColor: 'rgba(212, 183, 118, 0.35)'
+                        }}></div>
+                        <div style={{
+                          position: 'absolute',
+                          left: '-0.4rem',
+                          width: '5px',
+                          height: '5px',
+                          borderRadius: '50%',
+                          backgroundColor: '#D4B776'
+                        }}></div>
+
+                        <span style={{
+                          fontSize: '0.78rem',
+                          color: 'rgba(255,255,255,0.9)',
+                          fontWeight: 500,
+                          letterSpacing: '0.04em',
+                          paddingLeft: '0.6rem',
+                          lineHeight: 1.3
+                        }}>
+                          {item}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-              <span style={{ fontSize: '0.75rem', fontWeight: 600, color: '#8A97A8', letterSpacing: '0.1em' }}>05 SERVICES</span>
-            </div>
 
-            <div className={`vat-grid-custom ${mounted ? 'animate-fade-in-up stagger-2' : ''}`} style={{ 
-              display: 'grid', 
-              gridTemplateColumns: 'repeat(6, 1fr)', 
-              gap: '1.5rem' 
-            }}>
-              {taxServices.slice(0, 5).map((service, index) => (
-                <div 
-                  key={index}
-                  className="vat-card-wrapper"
-                  style={{
-                    gridColumn: index < 3 ? 'span 2' : 'span 3'
-                  }}
-                >
-                  <ServiceDetailsCard 
-                    number={service.number}
-                    title={service.title}
-                    description={service.description}
-                    category="VAT"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+              {/* BRANCH 02 — ACCOUNTING & BOOK KEEPING */}
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                {/* Branch vertical connector from rail */}
+                <div style={{ width: '2px', height: '28px', backgroundColor: '#152845', opacity: 0.25 }}></div>
+                <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#D4B776', marginTop: '-4px', marginBottom: '0.75rem' }}></div>
 
-          {/* Group 2: Corporate Tax Services */}
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.75rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                <div style={{ width: '32px', height: '32px', borderRadius: '8px', backgroundColor: '#152845', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#D4B776' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2" /><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /></svg>
-                </div>
-                <div>
-                  <h3 style={{ fontSize: '1.35rem', color: 'var(--color-primary)', margin: 0, fontWeight: 600 }}>Corporate Tax</h3>
-                  <span style={{ fontSize: '0.8rem', color: '#778494' }}>FTA registration, annual filings & ongoing compliance advisory</span>
+                {/* Classification Node Card */}
+                <div style={{
+                  width: '100%',
+                  height: '100%',
+                  backgroundColor: '#152845',
+                  borderRadius: '16px',
+                  padding: '2.2rem 2rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  border: '1px solid rgba(255, 255, 255, 0.08)',
+                  boxShadow: '0 12px 28px rgba(10, 19, 37, 0.08)',
+                  position: 'relative',
+                  overflow: 'hidden'
+                }}>
+                  {/* Subtle Glow */}
+                  <div style={{
+                    position: 'absolute',
+                    top: '-30px',
+                    right: '-30px',
+                    width: '120px',
+                    height: '120px',
+                    borderRadius: '50%',
+                    background: 'radial-gradient(circle, rgba(212,183,118,0.18) 0%, rgba(212,183,118,0) 70%)',
+                    pointerEvents: 'none'
+                  }} />
+
+
+                  <h3 style={{
+                    fontSize: '1.75rem',
+                    color: '#ffffff',
+                    margin: '0 0 0.75rem',
+                    fontFamily: 'var(--font-heading)',
+                    fontWeight: 600,
+                    letterSpacing: '-0.01em',
+                    lineHeight: 1.2
+                  }}>
+                    Accounting &amp; Book keeping
+                  </h3>
+
+                  <div style={{ width: '50px', height: '2px', backgroundColor: '#D4B776', marginBottom: '1.75rem' }}></div>
+
+                  {/* Hierarchy Tree Stem for Workstreams */}
+                  <div style={{
+                    borderLeft: '2px solid rgba(212, 183, 118, 0.35)',
+                    marginLeft: '0.4rem',
+                    paddingLeft: '1.25rem',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '1.2rem',
+                    flexGrow: 1
+                  }}>
+                    {[
+                      'ACCOUNTING SECONDMENT AND SUPERVISION',
+                      'OUTSOURCED ACCOUNTING SERVICES',
+                      'MONTHLY BOOKKEEPING SERVICES',
+                      'YEARLY BOOKS CLOSING SERVICE'
+                    ].map((item, idx) => (
+                      <div key={idx} style={{ display: 'flex', alignItems: 'center', position: 'relative' }}>
+                        {/* Branch connector line and node dot */}
+                        <div style={{
+                          position: 'absolute',
+                          left: '-1.25rem',
+                          width: '1rem',
+                          height: '1.5px',
+                          backgroundColor: 'rgba(212, 183, 118, 0.35)'
+                        }}></div>
+                        <div style={{
+                          position: 'absolute',
+                          left: '-0.4rem',
+                          width: '5px',
+                          height: '5px',
+                          borderRadius: '50%',
+                          backgroundColor: '#D4B776'
+                        }}></div>
+
+                        <span style={{
+                          fontSize: '0.78rem',
+                          color: 'rgba(255,255,255,0.9)',
+                          fontWeight: 500,
+                          letterSpacing: '0.04em',
+                          paddingLeft: '0.6rem',
+                          lineHeight: 1.3
+                        }}>
+                          {item}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-              <span style={{ fontSize: '0.75rem', fontWeight: 600, color: '#8A97A8', letterSpacing: '0.1em' }}>03 SERVICES</span>
-            </div>
 
-            <div className={mounted ? 'animate-fade-in-up stagger-3' : ''} style={{ 
-              display: 'grid', 
-              gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))', 
-              gap: '1.5rem' 
-            }}>
-              {taxServices.slice(5).map((service, index) => (
-                <ServiceDetailsCard 
-                  key={index}
-                  number={service.number}
-                  title={service.title}
-                  description={service.description}
-                  category="Corporate Tax"
-                />
-              ))}
+              {/* BRANCH 03 — BUSINESS CONSULTANCY */}
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                {/* Branch vertical connector from rail */}
+                <div style={{ width: '2px', height: '28px', backgroundColor: '#152845', opacity: 0.25 }}></div>
+                <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#D4B776', marginTop: '-4px', marginBottom: '0.75rem' }}></div>
+
+                {/* Classification Node Card */}
+                <div style={{
+                  width: '100%',
+                  height: '100%',
+                  backgroundColor: '#07162C',
+                  borderRadius: '16px',
+                  padding: '2.2rem 2rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  border: '1px solid rgba(255, 255, 255, 0.08)',
+                  boxShadow: '0 12px 28px rgba(10, 19, 37, 0.08)',
+                  position: 'relative',
+                  overflow: 'hidden'
+                }}>
+                  {/* Subtle Glow */}
+                  <div style={{
+                    position: 'absolute',
+                    top: '-30px',
+                    right: '-30px',
+                    width: '120px',
+                    height: '120px',
+                    borderRadius: '50%',
+                    background: 'radial-gradient(circle, rgba(212,183,118,0.18) 0%, rgba(212,183,118,0) 70%)',
+                    pointerEvents: 'none'
+                  }} />
+
+
+                  <h3 style={{
+                    fontSize: '1.75rem',
+                    color: '#ffffff',
+                    margin: '0 0 0.75rem',
+                    fontFamily: 'var(--font-heading)',
+                    fontWeight: 600,
+                    letterSpacing: '-0.01em',
+                    lineHeight: 1.2
+                  }}>
+                    Business Consultancy
+                  </h3>
+
+                  <div style={{ width: '50px', height: '2px', backgroundColor: '#D4B776', marginBottom: '1.75rem' }}></div>
+
+                  {/* Hierarchy Tree Stem for Workstreams */}
+                  <div style={{
+                    borderLeft: '2px solid rgba(212, 183, 118, 0.35)',
+                    marginLeft: '0.4rem',
+                    paddingLeft: '1.25rem',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '1.2rem',
+                    flexGrow: 1
+                  }}>
+                    {[
+                      'COMPANY INCORPORATION SERVICES',
+                      'COMPANY LIQUIDATION SERVICES',
+                      'TAX RESIDENCY CERTIFICATE',
+                      'PRO SERVICES'
+                    ].map((item, idx) => (
+                      <div key={idx} style={{ display: 'flex', alignItems: 'center', position: 'relative' }}>
+                        {/* Branch connector line and node dot */}
+                        <div style={{
+                          position: 'absolute',
+                          left: '-1.25rem',
+                          width: '1rem',
+                          height: '1.5px',
+                          backgroundColor: 'rgba(212, 183, 118, 0.35)'
+                        }}></div>
+                        <div style={{
+                          position: 'absolute',
+                          left: '-0.4rem',
+                          width: '5px',
+                          height: '5px',
+                          borderRadius: '50%',
+                          backgroundColor: '#D4B776'
+                        }}></div>
+
+                        <span style={{
+                          fontSize: '0.78rem',
+                          color: 'rgba(255,255,255,0.9)',
+                          fontWeight: 500,
+                          letterSpacing: '0.04em',
+                          paddingLeft: '0.6rem',
+                          lineHeight: 1.3
+                        }}>
+                          {item}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* BRANCH 04 — OTHER SERVICES */}
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                {/* Branch vertical connector from rail */}
+                <div style={{ width: '2px', height: '28px', backgroundColor: '#152845', opacity: 0.25 }}></div>
+                <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#D4B776', marginTop: '-4px', marginBottom: '0.75rem' }}></div>
+
+                {/* Classification Node Card */}
+                <div style={{
+                  width: '100%',
+                  height: '100%',
+                  backgroundColor: '#10223B',
+                  borderRadius: '16px',
+                  padding: '2.2rem 2rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  border: '1px solid rgba(255, 255, 255, 0.08)',
+                  boxShadow: '0 12px 28px rgba(10, 19, 37, 0.08)',
+                  position: 'relative',
+                  overflow: 'hidden'
+                }}>
+                  {/* Subtle Glow */}
+                  <div style={{
+                    position: 'absolute',
+                    top: '-30px',
+                    right: '-30px',
+                    width: '120px',
+                    height: '120px',
+                    borderRadius: '50%',
+                    background: 'radial-gradient(circle, rgba(212,183,118,0.18) 0%, rgba(212,183,118,0) 70%)',
+                    pointerEvents: 'none'
+                  }} />
+
+
+                  <h3 style={{
+                    fontSize: '1.75rem',
+                    color: '#ffffff',
+                    margin: '0 0 0.75rem',
+                    fontFamily: 'var(--font-heading)',
+                    fontWeight: 600,
+                    letterSpacing: '-0.01em',
+                    lineHeight: 1.2
+                  }}>
+                    Other Services
+                  </h3>
+
+                  <div style={{ width: '50px', height: '2px', backgroundColor: '#D4B776', marginBottom: '1.75rem' }}></div>
+
+                  {/* Hierarchy Tree Stem for Workstreams */}
+                  <div style={{
+                    borderLeft: '2px solid rgba(212, 183, 118, 0.35)',
+                    marginLeft: '0.4rem',
+                    paddingLeft: '1.25rem',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '1.2rem',
+                    flexGrow: 1
+                  }}>
+                    {[
+                      'PAYROLL SERVICE',
+                      'AUDIT ASSISTANCE SERVICE'
+                    ].map((item, idx) => (
+                      <div key={idx} style={{ display: 'flex', alignItems: 'center', position: 'relative' }}>
+                        {/* Branch connector line and node dot */}
+                        <div style={{
+                          position: 'absolute',
+                          left: '-1.25rem',
+                          width: '1rem',
+                          height: '1.5px',
+                          backgroundColor: 'rgba(212, 183, 118, 0.35)'
+                        }}></div>
+                        <div style={{
+                          position: 'absolute',
+                          left: '-0.4rem',
+                          width: '5px',
+                          height: '5px',
+                          borderRadius: '50%',
+                          backgroundColor: '#D4B776'
+                        }}></div>
+
+                        <span style={{
+                          fontSize: '0.78rem',
+                          color: 'rgba(255,255,255,0.9)',
+                          fontWeight: 500,
+                          letterSpacing: '0.04em',
+                          paddingLeft: '0.6rem',
+                          lineHeight: 1.3
+                        }}>
+                          {item}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
 

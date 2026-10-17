@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 export default function HeaderNavbar() {
@@ -48,7 +49,7 @@ export default function HeaderNavbar() {
         backdropFilter: 'blur(20px)',
         WebkitBackdropFilter: 'blur(20px)',
         color: '#0A1E3A',
-        padding: '0.95rem 5%',
+        padding: '0.75rem 5%',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -61,33 +62,28 @@ export default function HeaderNavbar() {
         pointerEvents: showNavbar ? 'auto' : 'none'
       }}
     >
-      {/* Brand Logo with Gold Monogram Accent */}
-      <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none' }}>
+      {/* Brand Logo with Official Circular Emblem & Typography */}
+      <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', textDecoration: 'none' }}>
         <div style={{
-          width: '32px',
-          height: '32px',
-          borderRadius: '8px',
-          background: 'linear-gradient(135deg, #152E52 0%, #0B1C33 100%)',
-          color: '#D4B776',
+          position: 'relative',
+          width: '155px',
+          height: '42px',
           display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          fontWeight: 800,
-          fontSize: '0.82rem',
-          letterSpacing: '0.05em',
-          boxShadow: '0 4px 12px rgba(21, 46, 82, 0.22)'
+          alignItems: 'center'
         }}>
-          MJS
+          <Image
+            src="/mjs-logo.webp"
+            alt="MJS Global - Accounts Tax Advisory"
+            fill
+            sizes="160px"
+            style={{
+              objectFit: 'contain',
+              objectPosition: 'left center',
+              filter: 'brightness(0) saturate(100%) invert(8%) sepia(26%) saturate(3020%) hue-rotate(186deg) brightness(94%) contrast(97%)'
+            }}
+            priority
+          />
         </div>
-        <span style={{ 
-          fontSize: '1.15rem', 
-          fontWeight: 700, 
-          letterSpacing: '0.14em', 
-          color: '#0A1E3A',
-          fontFamily: 'var(--font-heading)'
-        }}>
-          MJS GLOBAL
-        </span>
       </Link>
       
       {/* Navigation Tiles - Preserving Exact Arrangement & Names */}
