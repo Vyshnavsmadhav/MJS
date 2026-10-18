@@ -172,6 +172,128 @@ export default function Home() {
             }}
           />
         </div>
+
+        {/* BOTTOM RIGHT QUICK CONTACT ACTION BUTTONS (CIRCULAR ICONS) */}
+        <div style={{
+          position: 'absolute',
+          bottom: '2.5rem',
+          right: '2.5rem',
+          zIndex: 10,
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '1rem',
+          alignItems: 'center'
+        }}>
+          {/* 1. CALL BUTTON */}
+          <a
+            href="tel:+971504926945"
+            aria-label="Call +971 50 492 6945"
+            title="Call: +971 50 492 6945"
+            style={{
+              width: '46px',
+              height: '46px',
+              borderRadius: '50%',
+              backgroundColor: '#0A1E3A',
+              color: '#D4B776',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              border: '1px solid rgba(212, 183, 118, 0.45)',
+              boxShadow: '0 8px 24px rgba(0, 0, 0, 0.35)',
+              textDecoration: 'none',
+              transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-3px) scale(1.1)';
+              e.currentTarget.style.backgroundColor = '#D4B776';
+              e.currentTarget.style.color = '#0A1325';
+              e.currentTarget.style.boxShadow = '0 12px 30px rgba(0, 0, 0, 0.45), 0 0 15px rgba(212, 183, 118, 0.4)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0) scale(1)';
+              e.currentTarget.style.backgroundColor = '#0A1E3A';
+              e.currentTarget.style.color = '#D4B776';
+              e.currentTarget.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.35)';
+            }}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+          </a>
+
+          {/* 2. WHATSAPP BUTTON */}
+          <a
+            href="https://wa.me/971504926945"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp +971 50 492 6945"
+            title="WhatsApp: +971 50 492 6945"
+            style={{
+              width: '46px',
+              height: '46px',
+              borderRadius: '50%',
+              backgroundColor: '#25D366',
+              color: '#FFFFFF',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              border: '1px solid rgba(255, 255, 255, 0.25)',
+              boxShadow: '0 8px 24px rgba(0, 0, 0, 0.35)',
+              textDecoration: 'none',
+              transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-3px) scale(1.1)';
+              e.currentTarget.style.boxShadow = '0 12px 30px rgba(0, 0, 0, 0.45), 0 0 18px rgba(37, 211, 102, 0.5)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0) scale(1)';
+              e.currentTarget.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.35)';
+            }}
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.077-2.003-.464-1.666-.69-2.73-2.383-2.813-2.495-.082-.112-.672-.893-.672-1.706 0-.814.426-1.214.577-1.378.151-.164.33-.205.441-.205.112 0 .223.001.32.007.103.005.241-.039.377.288.144.348.492 1.2.535 1.288.043.088.072.191.014.306-.058.115-.088.188-.174.288-.088.102-.185.228-.264.306-.089.088-.182.185-.078.363.104.179.462.763.992 1.235.683.608 1.26.797 1.439.886.179.088.283.078.389-.044.106-.123.456-.53.578-.711.121-.182.243-.151.408-.09.165.06 1.047.494 1.228.584.18.09.3.135.345.212.045.077.045.448-.099.853z"/>
+            </svg>
+          </a>
+
+          {/* 3. EMAIL BUTTON */}
+          <a
+            href="mailto:tax@mjsglobal.co"
+            aria-label="Email tax@mjsglobal.co"
+            title="Email: tax@mjsglobal.co"
+            style={{
+              width: '46px',
+              height: '46px',
+              borderRadius: '50%',
+              backgroundColor: '#0A1E3A',
+              color: '#FFFFFF',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              border: '1px solid rgba(255, 255, 255, 0.25)',
+              boxShadow: '0 8px 24px rgba(0, 0, 0, 0.35)',
+              textDecoration: 'none',
+              transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-3px) scale(1.1)';
+              e.currentTarget.style.backgroundColor = '#FFFFFF';
+              e.currentTarget.style.color = '#0A1325';
+              e.currentTarget.style.boxShadow = '0 12px 30px rgba(0, 0, 0, 0.45), 0 0 15px rgba(255, 255, 255, 0.35)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0) scale(1)';
+              e.currentTarget.style.backgroundColor = '#0A1E3A';
+              e.currentTarget.style.color = '#FFFFFF';
+              e.currentTarget.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.35)';
+            }}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </a>
+        </div>
       </section>
 
 

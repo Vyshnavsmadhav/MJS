@@ -44,8 +44,8 @@ export default function Footer() {
           </h4>
           <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.55rem', fontSize: '0.82rem' }}>
             <Link href="/about" style={{ transition: 'color 0.2s', color: 'rgba(255,255,255,0.65)' }}>About</Link>
-            <Link href="/team" style={{ transition: 'color 0.2s', color: 'rgba(255,255,255,0.65)' }}>Our Team</Link>
-            <Link href="/careers" style={{ transition: 'color 0.2s', color: 'rgba(255,255,255,0.65)' }}>Careers</Link>
+            <Link href="/services" style={{ transition: 'color 0.2s', color: 'rgba(255,255,255,0.65)' }}>Services</Link>
+            <Link href="/contact" style={{ transition: 'color 0.2s', color: 'rgba(255,255,255,0.65)' }}>Contact</Link>
           </nav>
         </div>
 
@@ -102,15 +102,6 @@ export default function Footer() {
       }}>
         <div style={{ color: 'rgba(255,255,255,0.55)' }}>
           &copy; 2026 MJS Global. All rights reserved.
-        </div>
-        <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-          <Link href="/privacy" style={{ transition: 'color 0.2s', color: 'rgba(255,255,255,0.55)' }}>Privacy Policy</Link>
-          <Link href="/terms" style={{ transition: 'color 0.2s', color: 'rgba(255,255,255,0.55)' }}>Terms of Use</Link>
-          <div style={{ display: 'flex', gap: '0.6rem', marginLeft: '0.5rem' }}>
-            {/* Social icons */}
-            <div style={{ width: '20px', height: '20px', border: '1px solid rgba(255,255,255,0.4)', borderRadius: '2px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.62rem', color: 'rgba(255,255,255,0.7)' }}>in</div>
-            <div style={{ width: '20px', height: '20px', border: '1px solid rgba(255,255,255,0.4)', borderRadius: '2px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.62rem', color: 'rgba(255,255,255,0.7)' }}>ig</div>
-          </div>
         </div>
       </div>
     </footer>

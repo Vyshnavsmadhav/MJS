@@ -45,17 +45,17 @@ export default function HeaderNavbar() {
         top: 0, 
         left: 0,
         right: 0,
-        backgroundColor: 'rgba(224, 240, 252, 0.88)', 
+        backgroundColor: 'rgba(7, 19, 39, 0.92)', 
         backdropFilter: 'blur(20px)',
         WebkitBackdropFilter: 'blur(20px)',
-        color: '#0A1E3A',
+        color: '#FFFFFF',
         padding: '0.75rem 5%',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
         zIndex: 1000,
-        borderBottom: '1px solid rgba(140, 185, 222, 0.45)',
-        boxShadow: showNavbar ? '0 10px 30px -6px rgba(45, 95, 145, 0.16)' : 'none',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+        boxShadow: showNavbar ? '0 10px 30px -6px rgba(3, 10, 22, 0.5)' : 'none',
         transform: showNavbar ? 'translateY(0)' : 'translateY(-100%)',
         opacity: showNavbar ? 1 : 0,
         transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease',
@@ -66,8 +66,8 @@ export default function HeaderNavbar() {
       <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', textDecoration: 'none' }}>
         <div style={{
           position: 'relative',
-          width: '155px',
-          height: '42px',
+          width: '215px',
+          height: '56px',
           display: 'flex',
           alignItems: 'center'
         }}>
@@ -75,11 +75,10 @@ export default function HeaderNavbar() {
             src="/mjs-logo.webp"
             alt="MJS Global - Accounts Tax Advisory"
             fill
-            sizes="160px"
+            sizes="240px"
             style={{
               objectFit: 'contain',
-              objectPosition: 'left center',
-              filter: 'brightness(0) saturate(100%) invert(8%) sepia(26%) saturate(3020%) hue-rotate(186deg) brightness(94%) contrast(97%)'
+              objectPosition: 'left center'
             }}
             priority
           />
@@ -95,11 +94,11 @@ export default function HeaderNavbar() {
           fontSize: '0.88rem', 
           fontWeight: 600, 
           alignItems: 'center',
-          backgroundColor: 'rgba(255, 255, 255, 0.7)',
+          backgroundColor: 'rgba(255, 255, 255, 0.08)',
           padding: '0.35rem 0.5rem',
           borderRadius: '999px',
-          border: '1px solid rgba(140, 185, 222, 0.5)',
-          boxShadow: '0 2px 10px rgba(70, 120, 170, 0.08)'
+          border: '1px solid rgba(255, 255, 255, 0.14)',
+          boxShadow: '0 2px 12px rgba(0, 0, 0, 0.25)'
         }}
       >
         {navItems.map((item) => {
@@ -110,7 +109,7 @@ export default function HeaderNavbar() {
               href={item.path}
               style={{
                 position: 'relative',
-                color: isActive ? '#0A1E3A' : '#415A77',
+                color: isActive ? '#07162C' : 'rgba(255, 255, 255, 0.78)',
                 backgroundColor: isActive ? '#FFFFFF' : 'transparent',
                 padding: '0.5rem 1.15rem',
                 borderRadius: '999px',
@@ -118,17 +117,17 @@ export default function HeaderNavbar() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '0.45rem',
-                boxShadow: isActive ? '0 2px 8px rgba(35, 75, 115, 0.12)' : 'none'
+                boxShadow: isActive ? '0 2px 8px rgba(0, 0, 0, 0.2)' : 'none'
               }}
               onMouseEnter={(e) => {
                 if (!isActive) {
-                  e.currentTarget.style.color = '#0A1E3A';
-                  e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+                  e.currentTarget.style.color = '#FFFFFF';
+                  e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.12)';
                 }
               }}
               onMouseLeave={(e) => {
                 if (!isActive) {
-                  e.currentTarget.style.color = '#415A77';
+                  e.currentTarget.style.color = 'rgba(255, 255, 255, 0.78)';
                   e.currentTarget.style.backgroundColor = 'transparent';
                 }
               }}
@@ -138,7 +137,7 @@ export default function HeaderNavbar() {
                   width: '6px',
                   height: '6px',
                   borderRadius: '50%',
-                  backgroundColor: '#0A1E3A'
+                  backgroundColor: '#07162C'
                 }} />
               )}
               {item.name}

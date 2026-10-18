@@ -5,18 +5,56 @@ import Link from 'next/link';
 export default function ContactPage() {
   const [mounted, setMounted] = useState(false);
   const [formState, setFormState] = useState('idle'); // 'idle', 'submitting', 'success'
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    phone: '',
+    service: '',
+    message: ''
+  });
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({ ...prev, [id]: value }));
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setFormState('submitting');
-    // Simulate network request
-    setTimeout(() => {
-      setFormState('success');
-    }, 1000);
+
+    const serviceLabels: { [key: string]: string } = {
+      tax: 'Tax Services',
+      accounting: 'Accounting & Bookkeeping',
+      consultancy: 'Business Consultancy',
+      other: 'Other Services'
+    };
+
+    const selectedService = serviceLabels[formData.service] || formData.service || 'General Enquiry';
+
+    // Format professional WhatsApp inquiry message
+    const waText = 
+      `*New Enquiry via MJS Global Website*\n\n` +
+      `*Name:* ${formData.name || 'N/A'}\n` +
+      `*Email:* ${formData.email || 'N/A'}\n` +
+      `*Company:* ${formData.company || 'N/A'}\n` +
+      `*Phone:* ${formData.phone || 'N/A'}\n` +
+      `*Service:* ${selectedService}\n` +
+      `*Message:* ${formData.message || 'N/A'}`;
+
+    const phoneNumber = '971504926945';
+    const waUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(waText)}`;
+
+    // Open WhatsApp in a new tab
+    if (typeof window !== 'undefined') {
+      window.open(waUrl, '_blank');
+    }
+
+    setFormState('success');
   };
 
   return (
@@ -170,25 +208,6 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Map Placeholder */}
-            <div style={{ width: '100%', height: '260px', backgroundColor: '#EAEAEA', borderRadius: '4px', position: 'relative', overflow: 'hidden' }}>
-              {/* Map abstract lines to look like a map */}
-              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, opacity: 0.3, backgroundImage: 'linear-gradient(45deg, #ddd 25%, transparent 25%, transparent 75%, #ddd 75%, #ddd), linear-gradient(45deg, #ddd 25%, transparent 25%, transparent 75%, #ddd 75%, #ddd)', backgroundSize: '40px 40px', backgroundPosition: '0 0, 20px 20px' }}></div>
-              <div style={{ position: 'absolute', top: '20%', left: 0, right: 0, height: '4px', backgroundColor: '#FAD02C', opacity: 0.6, transform: 'rotate(-15deg)' }}></div>
-              <div style={{ position: 'absolute', top: '60%', left: 0, right: 0, height: '6px', backgroundColor: '#fff', opacity: 0.8, transform: 'rotate(25deg)' }}></div>
-              
-              {/* Location Marker */}
-              <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <div style={{ width: '24px', height: '32px', backgroundColor: 'var(--color-primary)', borderRadius: '12px 12px 0 0', position: 'relative', display: 'flex', justifyContent: 'center' }}>
-                  <div style={{ width: '8px', height: '8px', backgroundColor: '#fff', borderRadius: '50%', marginTop: '6px' }}></div>
-                  <div style={{ position: 'absolute', bottom: '-6px', left: '6px', width: '0', height: '0', borderLeft: '6px solid transparent', borderRight: '6px solid transparent', borderTop: '6px solid var(--color-primary)' }}></div>
-                </div>
-                <div style={{ backgroundColor: '#fff', padding: '0.5rem 0.75rem', borderRadius: '2px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', fontSize: '0.75rem', fontWeight: 500, color: 'var(--color-primary)', whiteSpace: 'nowrap' }}>
-                  MJS Global<br/>
-                  <span style={{ fontWeight: 400, color: '#666', fontSize: '0.7rem' }}>Hair Al-Anz, Dubai</span>
-                </div>
-              </div>
-            </div>
 
           </div>
 
@@ -222,11 +241,27 @@ export default function ContactPage() {
                   <div style={{ display: 'flex', gap: '1.5rem' }}>
                     <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                       <label htmlFor="name" style={{ fontSize: '0.8rem', color: 'var(--color-primary)', fontWeight: 500 }}>Name *</label>
-                      <input type="text" id="name" required placeholder="Enter your name" className="contact-input" />
+                      <input 
+                        type="text" 
+                        id="name" 
+                        required 
+                        placeholder="Enter your name" 
+                        className="contact-input" 
+                        value={formData.name}
+                        onChange={handleChange}
+                      />
                     </div>
                     <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                       <label htmlFor="email" style={{ fontSize: '0.8rem', color: 'var(--color-primary)', fontWeight: 500 }}>Email *</label>
-                      <input type="email" id="email" required placeholder="Enter your email" className="contact-input" />
+                      <input 
+                        type="email" 
+                        id="email" 
+                        required 
+                        placeholder="Enter your email" 
+                        className="contact-input" 
+                        value={formData.email}
+                        onChange={handleChange}
+                      />
                     </div>
                   </div>
 
@@ -234,11 +269,25 @@ export default function ContactPage() {
                   <div style={{ display: 'flex', gap: '1.5rem' }}>
                     <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                       <label htmlFor="company" style={{ fontSize: '0.8rem', color: 'var(--color-primary)', fontWeight: 500 }}>Company</label>
-                      <input type="text" id="company" placeholder="Enter your company name" className="contact-input" />
+                      <input 
+                        type="text" 
+                        id="company" 
+                        placeholder="Enter your company name" 
+                        className="contact-input" 
+                        value={formData.company}
+                        onChange={handleChange}
+                      />
                     </div>
                     <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                       <label htmlFor="phone" style={{ fontSize: '0.8rem', color: 'var(--color-primary)', fontWeight: 500 }}>Phone</label>
-                      <input type="tel" id="phone" placeholder="Enter your phone number" className="contact-input" />
+                      <input 
+                        type="tel" 
+                        id="phone" 
+                        placeholder="Enter your phone number" 
+                        className="contact-input" 
+                        value={formData.phone}
+                        onChange={handleChange}
+                      />
                     </div>
                   </div>
 
@@ -246,7 +295,13 @@ export default function ContactPage() {
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                     <label htmlFor="service" style={{ fontSize: '0.8rem', color: 'var(--color-primary)', fontWeight: 500 }}>Service Interested In</label>
                     <div style={{ position: 'relative' }}>
-                      <select id="service" className="contact-input" style={{ appearance: 'none', width: '100%' }}>
+                      <select 
+                        id="service" 
+                        className="contact-input" 
+                        style={{ appearance: 'none', width: '100%' }}
+                        value={formData.service}
+                        onChange={handleChange}
+                      >
                         <option value="">Select a service</option>
                         <option value="tax">Tax Services</option>
                         <option value="accounting">Accounting & Bookkeeping</option>
@@ -262,7 +317,16 @@ export default function ContactPage() {
                   {/* Row 4 */}
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                     <label htmlFor="message" style={{ fontSize: '0.8rem', color: 'var(--color-primary)', fontWeight: 500 }}>Message *</label>
-                    <textarea id="message" required placeholder="Tell us how we can help you..." className="contact-input" rows={4} style={{ resize: 'vertical', minHeight: '100px' }}></textarea>
+                    <textarea 
+                      id="message" 
+                      required 
+                      placeholder="Tell us how we can help you..." 
+                      className="contact-input" 
+                      rows={4} 
+                      style={{ resize: 'vertical', minHeight: '100px' }}
+                      value={formData.message}
+                      onChange={handleChange}
+                    ></textarea>
                   </div>
 
                   <div style={{ marginTop: '0.5rem' }}>
