@@ -1,5 +1,6 @@
 'use client';
 import React, { useEffect, useState, useRef } from 'react';
+import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -136,8 +137,128 @@ export default function AboutUs() {
         </div>
       </section>
 
+      {/* SECTION — ABOUT US (PREMIUM CORPORATE BUSINESS LAYOUT) */}
+      <section style={{ backgroundColor: '#ffffff', padding: '6rem 6% 5.5rem', borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
+        <div style={{ maxWidth: '1300px', margin: '0 auto' }}>
+          
+          {/* Top Category Tag / Eyebrow */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.75rem' }}>
+            <span style={{ 
+              display: 'inline-block', 
+              width: '8px', 
+              height: '8px', 
+              borderRadius: '50%', 
+              backgroundColor: '#D4B776' 
+            }} />
+            <span style={{ 
+              fontSize: '0.8rem', 
+              fontWeight: 700, 
+              color: '#152845', 
+              letterSpacing: '0.2em', 
+              textTransform: 'uppercase' 
+            }}>
+              About MJS Global
+            </span>
+          </div>
+
+          {/* 2-Column Corporate Grid */}
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', 
+            gap: '3.5rem 5rem',
+            alignItems: 'start'
+          }}>
+            
+            {/* Left Column: Bold Headline & Mission Anchor */}
+            <div>
+              <h2 style={{ 
+                fontFamily: 'var(--font-heading)',
+                fontSize: 'clamp(2.1rem, 3.2vw, 3rem)',
+                lineHeight: 1.25,
+                color: '#0A1325',
+                fontWeight: 600,
+                letterSpacing: '-0.02em',
+                margin: '0 0 2rem'
+              }}>
+                Your Strategic Partner for Accounting, Tax & Advisory in the UAE.
+              </h2>
+              <div style={{ display: 'flex', gap: '2.5rem', paddingTop: '1rem', borderTop: '1px solid rgba(21, 40, 69, 0.1)' }}>
+                <div>
+                  <div style={{ fontSize: '2rem', fontWeight: 700, color: '#152845', fontFamily: 'var(--font-heading)' }}>2021</div>
+                  <div style={{ fontSize: '0.85rem', color: '#666', marginTop: '0.25rem' }}>Founded in UAE</div>
+                </div>
+                <div>
+                  <div style={{ fontSize: '2rem', fontWeight: 700, color: '#152845', fontFamily: 'var(--font-heading)' }}>100%</div>
+                  <div style={{ fontSize: '0.85rem', color: '#666', marginTop: '0.25rem' }}>Regulatory Compliance</div>
+                </div>
+                <div>
+                  <div style={{ fontSize: '2rem', fontWeight: 700, color: '#152845', fontFamily: 'var(--font-heading)' }}>End-to-End</div>
+                  <div style={{ fontSize: '0.85rem', color: '#666', marginTop: '0.25rem' }}>Corporate Solutions</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Refined Body Copy & Professional Context */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+              <p style={{ 
+                color: '#152845', 
+                fontSize: '1.25rem', 
+                lineHeight: 1.6, 
+                fontWeight: 500,
+                margin: 0
+              }}>
+                MJS Global is a professional services firm formed in 2021 by young aspirant entrepreneurs, serving businesses with competent accounting, tax, compliance, and audit solutions.
+              </p>
+              
+              <p style={{ 
+                color: '#556377', 
+                fontSize: '1.05rem', 
+                lineHeight: 1.75, 
+                margin: 0 
+              }}>
+                From large multinationals and family-office businesses to fast-growing SMEs, we partner with organizations seeking trusted expertise and comprehensive solutions for their corporate demands. Our localized knowledge paired with international quality standards ensures your business stays compliant and ahead.
+              </p>
+
+              <div style={{ paddingTop: '1rem' }}>
+                <a 
+                  href="#team" 
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.75rem',
+                    color: '#152845',
+                    fontWeight: 600,
+                    fontSize: '0.95rem',
+                    textDecoration: 'none',
+                    borderBottom: '2px solid #D4B776',
+                    paddingBottom: '0.35rem',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = '#0A1325';
+                    e.currentTarget.style.borderBottomColor = '#152845';
+                    e.currentTarget.style.transform = 'translateX(4px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = '#152845';
+                    e.currentTarget.style.borderBottomColor = '#D4B776';
+                    e.currentTarget.style.transform = 'translateX(0)';
+                  }}
+                >
+                  <span>Learn more about our team and firm</span>
+                  <span style={{ fontSize: '1.1rem' }}>→</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
       {/* SECTION 2 — FOUNDERS / LEADERSHIP (BRIGHT THEMED CONTEMPORARY DESIGN) */}
-      <section style={{ 
+      <section id="team" style={{ 
         backgroundColor: '#F8FAFC', 
         padding: '7rem 6% 7.5rem', 
         color: '#0A1325',
@@ -179,7 +300,7 @@ export default function AboutUs() {
                 margin: 0,
                 lineHeight: 1.15
               }}>
-                The Minds Behind MJS Global
+                The Mind Behind MJS Global
               </h2>
             </div>
 
@@ -194,12 +315,11 @@ export default function AboutUs() {
             </p>
           </div>
 
-          {/* 3 Modern Bright Executive Cards */}
+          {/* Executive Leadership Profile */}
           <div style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', 
-            gap: '2.5rem',
-            alignItems: 'stretch'
+            maxWidth: '520px',
+            margin: '0 auto',
+            width: '100%'
           }}>
 
             {/* Founder 1: Pradeep Balakrishnan */}
@@ -226,7 +346,7 @@ export default function AboutUs() {
               {/* Image Frame */}
               <div style={{
                 width: '100%',
-                height: '360px',
+                height: '380px',
                 borderRadius: '12px',
                 overflow: 'hidden',
                 position: 'relative',
@@ -304,216 +424,6 @@ export default function AboutUs() {
                 flexGrow: 1
               }}>
                 Pradeep is a seasoned tax expert with an MBA and over 13 years of experience across India and the Middle East. Having worked with multiple Big 4 firms, he is a key member of MJS Global, bringing strong expertise in finance, tax, and compliance, with a focus on quick turnaround and quality solutions.
-              </p>
-            </div>
-
-            {/* Founder 2: Shilton S Panakkal */}
-            <div style={{
-              backgroundColor: '#FFFFFF',
-              border: '1px solid rgba(21, 40, 69, 0.08)',
-              borderRadius: '16px',
-              padding: '1.75rem',
-              display: 'flex',
-              flexDirection: 'column',
-              transition: 'transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease',
-              boxShadow: '0 8px 24px rgba(10, 19, 37, 0.05)'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'translateY(-6px)';
-              e.currentTarget.style.borderColor = 'rgba(212, 183, 118, 0.6)';
-              e.currentTarget.style.boxShadow = '0 20px 40px rgba(10, 19, 37, 0.1)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.borderColor = 'rgba(21, 40, 69, 0.08)';
-              e.currentTarget.style.boxShadow = '0 8px 24px rgba(10, 19, 37, 0.05)';
-            }}>
-              {/* Image Frame */}
-              <div style={{
-                width: '100%',
-                height: '360px',
-                borderRadius: '12px',
-                overflow: 'hidden',
-                position: 'relative',
-                marginBottom: '1.75rem',
-                backgroundColor: '#f0f3f6'
-              }}>
-                <img 
-                  src="/shilton-panakkal.png" 
-                  alt="Shilton S Panakkal"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    objectPosition: 'center 15%',
-                    display: 'block',
-                    transition: 'transform 0.4s ease'
-                  }}
-                  onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.04)'}
-                  onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
-                />
-                {/* Floating Tag */}
-                <div style={{
-                  position: 'absolute',
-                  top: '1rem',
-                  left: '1rem',
-                  backgroundColor: 'rgba(255, 255, 255, 0.92)',
-                  backdropFilter: 'blur(8px)',
-                  WebkitBackdropFilter: 'blur(8px)',
-                  padding: '0.45rem 0.9rem',
-                  borderRadius: '20px',
-                  border: '1px solid rgba(21, 40, 69, 0.1)',
-                  fontSize: '0.72rem',
-                  fontWeight: 700,
-                  color: '#152845',
-                  letterSpacing: '0.08em',
-                  textTransform: 'uppercase',
-                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.06)'
-                }}>
-                  EY & Deloitte Europe Alum
-                </div>
-              </div>
-
-              {/* Name & Roles */}
-              <div style={{ marginBottom: '1.25rem' }}>
-                <h3 style={{ 
-                  fontSize: '1.5rem', 
-                  fontWeight: 700, 
-                  color: '#0A1325', 
-                  fontFamily: 'var(--font-heading)',
-                  letterSpacing: '-0.01em',
-                  margin: '0 0 0.4rem',
-                  lineHeight: 1.2
-                }}>
-                  Shilton S Panakkal
-                </h3>
-                <div style={{ 
-                  fontSize: '0.9rem', 
-                  color: '#152845', 
-                  fontWeight: 600,
-                  letterSpacing: '0.01em'
-                }}>
-                  Tax & Corporate Advisor
-                </div>
-              </div>
-
-              {/* Divider */}
-              <div style={{ width: '100%', height: '1px', backgroundColor: 'rgba(21, 40, 69, 0.08)', marginBottom: '1.25rem' }} />
-
-              {/* Bio */}
-              <p style={{ 
-                fontSize: '0.9rem', 
-                color: '#556377', 
-                lineHeight: 1.7, 
-                margin: 0,
-                flexGrow: 1
-              }}>
-                Shilton is a driven finance professional with strong experience in tax and corporate restructuring. With a background at EY and Deloitte Europe, he brings deep financial and technical expertise, an eye for detail, and a strong ability to learn and adapt. In recent years, he has specialized in corporate restructuring, tax, and reporting.
-              </p>
-            </div>
-
-            {/* Founder 3: Sandhya Ravi */}
-            <div style={{
-              backgroundColor: '#FFFFFF',
-              border: '1px solid rgba(21, 40, 69, 0.08)',
-              borderRadius: '16px',
-              padding: '1.75rem',
-              display: 'flex',
-              flexDirection: 'column',
-              transition: 'transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease',
-              boxShadow: '0 8px 24px rgba(10, 19, 37, 0.05)'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'translateY(-6px)';
-              e.currentTarget.style.borderColor = 'rgba(212, 183, 118, 0.6)';
-              e.currentTarget.style.boxShadow = '0 20px 40px rgba(10, 19, 37, 0.1)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.borderColor = 'rgba(21, 40, 69, 0.08)';
-              e.currentTarget.style.boxShadow = '0 8px 24px rgba(10, 19, 37, 0.05)';
-            }}>
-              {/* Image Frame */}
-              <div style={{
-                width: '100%',
-                height: '360px',
-                borderRadius: '12px',
-                overflow: 'hidden',
-                position: 'relative',
-                marginBottom: '1.75rem',
-                backgroundColor: '#f0f3f6'
-              }}>
-                <img 
-                  src="/sandhya-ravi.png" 
-                  alt="Sandhya Ravi"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    objectPosition: 'center 10%',
-                    display: 'block',
-                    transition: 'transform 0.4s ease'
-                  }}
-                  onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.04)'}
-                  onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
-                />
-                {/* Floating Tag */}
-                <div style={{
-                  position: 'absolute',
-                  top: '1rem',
-                  left: '1rem',
-                  backgroundColor: 'rgba(255, 255, 255, 0.92)',
-                  backdropFilter: 'blur(8px)',
-                  WebkitBackdropFilter: 'blur(8px)',
-                  padding: '0.45rem 0.9rem',
-                  borderRadius: '20px',
-                  border: '1px solid rgba(21, 40, 69, 0.1)',
-                  fontSize: '0.72rem',
-                  fontWeight: 700,
-                  color: '#152845',
-                  letterSpacing: '0.08em',
-                  textTransform: 'uppercase',
-                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.06)'
-                }}>
-                  Audit & Banking
-                </div>
-              </div>
-
-              {/* Name & Roles */}
-              <div style={{ marginBottom: '1.25rem' }}>
-                <h3 style={{ 
-                  fontSize: '1.5rem', 
-                  fontWeight: 700, 
-                  color: '#0A1325', 
-                  fontFamily: 'var(--font-heading)',
-                  letterSpacing: '-0.01em',
-                  margin: '0 0 0.4rem',
-                  lineHeight: 1.2
-                }}>
-                  Sandhya Ravi
-                </h3>
-                <div style={{ 
-                  fontSize: '0.9rem', 
-                  color: '#152845', 
-                  fontWeight: 600,
-                  letterSpacing: '0.01em'
-                }}>
-                  Partner — Accounts & Audit
-                </div>
-              </div>
-
-              {/* Divider */}
-              <div style={{ width: '100%', height: '1px', backgroundColor: 'rgba(21, 40, 69, 0.08)', marginBottom: '1.25rem' }} />
-
-              {/* Bio */}
-              <p style={{ 
-                fontSize: '0.9rem', 
-                color: '#556377', 
-                lineHeight: 1.7, 
-                margin: 0,
-                flexGrow: 1
-              }}>
-                Sandhya is a qualified accountant based in our Dubai office within the Audit and Assurance department. She holds an MBA and has 6 years of experience in customer handling and accounting across trading and service sectors, along with 2 years of UAE banking experience.
               </p>
             </div>
 

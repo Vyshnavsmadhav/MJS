@@ -297,12 +297,16 @@ export default function Home() {
       </section>
 
 
-      {/* SECTION — ABOUT US (PREMIUM CORPORATE BUSINESS LAYOUT) */}
-      <section style={{ backgroundColor: '#ffffff', padding: '7rem 6% 6rem', borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
+      {/* SECTION — VISION, MISSION & CORE VALUES */}
+      <section style={{ 
+        backgroundColor: '#FFFFFF', 
+        padding: '6rem 6% 5.5rem', 
+        borderBottom: '1px solid rgba(0, 0, 0, 0.06)' 
+      }}>
         <div style={{ maxWidth: '1300px', margin: '0 auto' }}>
           
-          {/* Top Category Tag / Eyebrow */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.75rem' }}>
+          {/* Eyebrow */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '2.5rem' }}>
             <span style={{ 
               display: 'inline-block', 
               width: '8px', 
@@ -317,101 +321,184 @@ export default function Home() {
               letterSpacing: '0.2em', 
               textTransform: 'uppercase' 
             }}>
-              About MJS Global
+              Guiding Principles
             </span>
           </div>
 
-          {/* 2-Column Corporate Grid */}
+          {/* Vision & Mission Grid */}
           <div style={{ 
             display: 'grid', 
             gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', 
-            gap: '3.5rem 5rem',
-            alignItems: 'start'
+            gap: '2.5rem',
+            marginBottom: '3.5rem'
           }}>
             
-            {/* Left Column: Bold Headline & Mission Anchor */}
-            <div>
-              <h2 style={{ 
-                fontFamily: 'var(--font-heading)',
-                fontSize: 'clamp(2.1rem, 3.2vw, 3rem)',
-                lineHeight: 1.25,
-                color: '#0A1325',
-                fontWeight: 600,
-                letterSpacing: '-0.02em',
-                margin: '0 0 2rem'
+            {/* Vision Card */}
+            <div style={{
+              backgroundColor: '#F8FAFC',
+              borderRadius: '16px',
+              padding: '2.5rem',
+              border: '1px solid rgba(21, 40, 69, 0.08)',
+              position: 'relative',
+              overflow: 'hidden'
+            }}>
+              <div style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '4px',
+                height: '100%',
+                backgroundColor: '#D4B776'
+              }} />
+              <div style={{ 
+                fontSize: '0.8rem', 
+                fontWeight: 700, 
+                color: '#D4B776', 
+                letterSpacing: '0.15em', 
+                textTransform: 'uppercase',
+                marginBottom: '0.75rem' 
               }}>
-                Your Strategic Partner for Accounting, Tax & Advisory in the UAE.
-              </h2>
-              <div style={{ display: 'flex', gap: '2.5rem', paddingTop: '1rem', borderTop: '1px solid rgba(21, 40, 69, 0.1)' }}>
-                <div>
-                  <div style={{ fontSize: '2rem', fontWeight: 700, color: '#152845', fontFamily: 'var(--font-heading)' }}>2021</div>
-                  <div style={{ fontSize: '0.85rem', color: '#666', marginTop: '0.25rem' }}>Founded in UAE</div>
-                </div>
-                <div>
-                  <div style={{ fontSize: '2rem', fontWeight: 700, color: '#152845', fontFamily: 'var(--font-heading)' }}>100%</div>
-                  <div style={{ fontSize: '0.85rem', color: '#666', marginTop: '0.25rem' }}>Regulatory Compliance</div>
-                </div>
-                <div>
-                  <div style={{ fontSize: '2rem', fontWeight: 700, color: '#152845', fontFamily: 'var(--font-heading)' }}>End-to-End</div>
-                  <div style={{ fontSize: '0.85rem', color: '#666', marginTop: '0.25rem' }}>Corporate Solutions</div>
-                </div>
+                Our Vision
               </div>
-            </div>
-
-            {/* Right Column: Refined Body Copy & Professional Context */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-              <p style={{ 
-                color: '#152845', 
-                fontSize: '1.25rem', 
-                lineHeight: 1.6, 
+              <p style={{
+                fontSize: '1.15rem',
+                lineHeight: 1.7,
+                color: '#0A1325',
                 fontWeight: 500,
                 margin: 0
               }}>
-                MJS Global is a professional services firm formed in 2021 by young aspirant entrepreneurs, serving businesses with competent accounting, tax, compliance, and audit solutions.
+                To be the trusted force behind every business’s financial clarity, tax advisory, regulatory confidence, and sustainable success — building enduring partnerships that grow stronger with time.
               </p>
-              
-              <p style={{ 
-                color: '#556377', 
-                fontSize: '1.05rem', 
-                lineHeight: 1.75, 
-                margin: 0 
-              }}>
-                From large multinationals and family-office businesses to fast-growing SMEs, we partner with organizations seeking trusted expertise and comprehensive solutions for their corporate demands. Our localized knowledge paired with international quality standards ensures your business stays compliant and ahead.
-              </p>
-
-              <div style={{ paddingTop: '1rem' }}>
-                <Link 
-                  href="/about" 
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.75rem',
-                    color: '#152845',
-                    fontWeight: 600,
-                    fontSize: '0.95rem',
-                    textDecoration: 'none',
-                    borderBottom: '2px solid #D4B776',
-                    paddingBottom: '0.35rem',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s ease'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.color = '#0A1325';
-                    e.currentTarget.style.borderBottomColor = '#152845';
-                    e.currentTarget.style.transform = 'translateX(4px)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.color = '#152845';
-                    e.currentTarget.style.borderBottomColor = '#D4B776';
-                    e.currentTarget.style.transform = 'translateX(0)';
-                  }}
-                >
-                  <span>Learn more about our team and firm</span>
-                  <span style={{ fontSize: '1.1rem' }}>→</span>
-                </Link>
-              </div>
             </div>
 
+            {/* Mission Card */}
+            <div style={{
+              backgroundColor: '#F8FAFC',
+              borderRadius: '16px',
+              padding: '2.5rem',
+              border: '1px solid rgba(21, 40, 69, 0.08)',
+              position: 'relative',
+              overflow: 'hidden'
+            }}>
+              <div style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '4px',
+                height: '100%',
+                backgroundColor: '#152845'
+              }} />
+              <div style={{ 
+                fontSize: '0.8rem', 
+                fontWeight: 700, 
+                color: '#152845', 
+                letterSpacing: '0.15em', 
+                textTransform: 'uppercase',
+                marginBottom: '0.75rem' 
+              }}>
+                Our Mission
+              </div>
+              <p style={{
+                fontSize: '1.05rem',
+                lineHeight: 1.7,
+                color: '#334155',
+                fontWeight: 400,
+                margin: 0
+              }}>
+                To simplify accounting, tax, and compliance through expertise, integrity, and proactive service; deliver tailored solutions that exceed customer expectations; and empower businesses to grow confidently while building a sustainable future for our clients, our people, and our organization.
+              </p>
+            </div>
+
+          </div>
+
+          {/* Core Values Section */}
+          <div style={{
+            backgroundColor: '#0A1E3A',
+            borderRadius: '20px',
+            padding: '3rem',
+            color: '#FFFFFF',
+            backgroundImage: 'radial-gradient(circle at top right, rgba(212, 183, 118, 0.12) 0%, transparent 60%)',
+            boxShadow: '0 20px 40px rgba(10, 30, 58, 0.08)'
+          }}>
+            <div style={{ 
+              display: 'flex', 
+              alignItems: 'center', 
+              gap: '0.6rem', 
+              marginBottom: '2rem' 
+            }}>
+              <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#D4B776' }} />
+              <h3 style={{ 
+                fontSize: '0.9rem', 
+                fontWeight: 700, 
+                letterSpacing: '0.2em', 
+                color: '#D4B776', 
+                textTransform: 'uppercase',
+                margin: 0
+              }}>
+                Our Core Values
+              </h3>
+            </div>
+
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
+              gap: '1.5rem' 
+            }}>
+              {[
+                { num: '01', title: 'Integrity & Trust', desc: 'Uncompromising honesty and ethical partnership.' },
+                { num: '02', title: 'Customer-Centric Excellence', desc: 'Tailored solutions designed around your needs.' },
+                { num: '03', title: 'Growth Through Innovation', desc: 'Forward-looking strategies for modern markets.' },
+                { num: '04', title: 'Compliance with Confidence', desc: 'Flawless adherence to UAE regulations.' },
+                { num: '05', title: 'Long-Term Sustainability', desc: 'Enduring success for clients and community.' },
+              ].map((val) => (
+                <div 
+                  key={val.num}
+                  style={{
+                    backgroundColor: 'rgba(255, 255, 255, 0.04)',
+                    border: '1px solid rgba(255, 255, 255, 0.08)',
+                    borderRadius: '12px',
+                    padding: '1.5rem',
+                    transition: 'all 0.3s ease'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = 'rgba(212, 183, 118, 0.1)';
+                    e.currentTarget.style.borderColor = 'rgba(212, 183, 118, 0.3)';
+                    e.currentTarget.style.transform = 'translateY(-3px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.04)';
+                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                  }}
+                >
+                  <div style={{ 
+                    fontFamily: 'var(--font-heading)',
+                    fontSize: '1.25rem', 
+                    color: '#D4B776', 
+                    fontWeight: 700, 
+                    marginBottom: '0.5rem' 
+                  }}>
+                    {val.num}
+                  </div>
+                  <div style={{ 
+                    fontWeight: 600, 
+                    fontSize: '1.05rem', 
+                    color: '#FFFFFF', 
+                    marginBottom: '0.4rem',
+                    lineHeight: 1.35
+                  }}>
+                    {val.title}
+                  </div>
+                  <div style={{ 
+                    fontSize: '0.85rem', 
+                    color: 'rgba(255, 255, 255, 0.65)', 
+                    lineHeight: 1.5 
+                  }}>
+                    {val.desc}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
         </div>

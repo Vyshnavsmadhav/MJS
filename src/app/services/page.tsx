@@ -8,38 +8,60 @@ export default function ServicesPage() {
       id: 1,
       title: 'Tax Services',
       bgColor: '#0A1325',
-      workstreams: [
+      subGroups: [
         {
-          name: 'VAT REGISTRATION',
-          desc: 'Seamless FTA tax group & individual registration setup for mandatory and voluntary thresholds.'
+          name: 'VAT Services',
+          hasSubgroups: true,
+          workstreams: [
+            {
+              name: 'VAT REGISTRATION',
+              desc: 'Seamless FTA tax group & individual registration setup for mandatory and voluntary thresholds.'
+            },
+            {
+              name: 'VAT REFUND SERVICES',
+              desc: 'End-to-end management of excess input VAT refund claims with the Federal Tax Authority.'
+            },
+            {
+              name: 'VAT RETURN FILING',
+              desc: 'Timely and compliant periodic VAT201 preparation, reconciliation, and submission.'
+            },
+            {
+              name: 'VAT HEALTH CHECKS',
+              desc: 'Comprehensive diagnostic audit of tax records to identify compliance gaps and minimize penalties.'
+            },
+            {
+              name: 'VAT ADVISORY SERVICES',
+              desc: 'Strategic consultation on transaction structuring, cross-border treatment, and exemption rules.'
+            }
+          ]
         },
         {
-          name: 'VAT REFUND SERVICES',
-          desc: 'End-to-end management of excess input VAT refund claims with the Federal Tax Authority.'
+          name: 'Corporate Tax Services',
+          hasSubgroups: true,
+          workstreams: [
+            {
+              name: 'CORPORATE TAX REGISTRATION',
+              desc: 'Accredited FTA corporate tax enrollment and corporate tax registration number (TRN) issuance.'
+            },
+            {
+              name: 'CORPORATE TAX FILING',
+              desc: 'Accurate annual corporate tax return filing aligned with UAE Federal Decree-Law No. 47.'
+            },
+            {
+              name: 'CORPORATE TAX ADVISORY',
+              desc: 'Qualifying free zone person assessments, transfer pricing, and proactive tax optimization.'
+            }
+          ]
         },
         {
-          name: 'VAT RETURN FILING',
-          desc: 'Timely and compliant periodic VAT201 preparation, reconciliation, and submission.'
+          name: 'Tax Residency Certificate',
+          hasSubgroups: false,
+          desc: 'Procurement of TRCs for corporate entities and individuals to leverage double taxation treaties.'
         },
         {
-          name: 'CORPORATE TAX REGISTRATION',
-          desc: 'Accredited FTA corporate tax enrollment and corporate tax registration number (TRN) issuance.'
-        },
-        {
-          name: 'VAT HEALTH CHECKS',
-          desc: 'Comprehensive diagnostic audit of tax records to identify compliance gaps and minimize penalties.'
-        },
-        {
-          name: 'CORPORATE TAX FILING',
-          desc: 'Accurate annual corporate tax return filing aligned with UAE Federal Decree-Law No. 47.'
-        },
-        {
-          name: 'VAT ADVISORY SERVICES',
-          desc: 'Strategic consultation on transaction structuring, cross-border treatment, and exemption rules.'
-        },
-        {
-          name: 'CORPORATE TAX ADVISORY',
-          desc: 'Qualifying free zone person assessments, transfer pricing, and proactive tax optimization.'
+          name: 'Excise Tax Services',
+          hasSubgroups: false,
+          desc: 'Excise registration, return filing, declarations, and compliance advisory for scheduled excise goods.'
         }
       ]
     },
@@ -78,10 +100,6 @@ export default function ServicesPage() {
         {
           name: 'COMPANY LIQUIDATION SERVICES',
           desc: 'Structured deregistration, clearance acquisition, and official liquidator report delivery.'
-        },
-        {
-          name: 'TAX RESIDENCY CERTIFICATE',
-          desc: 'Procurement of TRCs for corporate entities and individuals to leverage double taxation treaties.'
         },
         {
           name: 'PRO SERVICES',
@@ -392,59 +410,181 @@ export default function ServicesPage() {
                         opacity: isHovered ? 1 : 0
                       }}>
                         <div style={{ overflow: 'hidden' }}>
-                          <div style={{
-                            display: 'grid',
-                            gridTemplateColumns: cat.workstreams.length > 4 ? 'repeat(auto-fit, minmax(240px, 1fr))' : '1fr',
-                            gap: '1.1rem 1.75rem',
-                            paddingTop: '1.5rem',
-                            paddingBottom: '0.5rem'
-                          }}>
-                            {cat.workstreams.map((ws, idx) => (
-                              <div 
-                                key={idx} 
-                                style={{ 
-                                  display: 'flex', 
-                                  alignItems: 'flex-start', 
-                                  position: 'relative',
-                                  paddingLeft: '1.25rem',
-                                  borderLeft: '2px solid rgba(212, 183, 118, 0.35)'
-                                }}
-                              >
-                                {/* Horizontal connector node dot */}
-                                <div style={{
-                                  position: 'absolute',
-                                  left: '-4px',
-                                  top: '7px',
-                                  width: '6px',
-                                  height: '6px',
-                                  borderRadius: '50%',
-                                  backgroundColor: '#D4B776',
-                                  boxShadow: '0 0 6px rgba(212, 183, 118, 0.6)'
-                                }}></div>
+                          {cat.subGroups ? (
+                            <div style={{
+                              display: 'flex',
+                              flexDirection: 'column',
+                              gap: '1.25rem',
+                              paddingTop: '1.5rem',
+                              paddingBottom: '0.5rem'
+                            }}>
+                              {cat.subGroups.map((sub, sIdx) => (
+                                <div 
+                                  key={sIdx}
+                                  style={{
+                                    backgroundColor: 'rgba(255, 255, 255, 0.03)',
+                                    border: '1px solid rgba(212, 183, 118, 0.18)',
+                                    borderRadius: '10px',
+                                    padding: '1rem 1.15rem',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    gap: '0.75rem'
+                                  }}
+                                >
+                                  {/* Subgroup Header */}
+                                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem' }}>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                      <span style={{ 
+                                        width: '6px', 
+                                        height: '6px', 
+                                        borderRadius: '50%', 
+                                        backgroundColor: '#D4B776' 
+                                      }} />
+                                      <span style={{ 
+                                        fontSize: '0.82rem', 
+                                        fontWeight: 700, 
+                                        color: '#D4B776', 
+                                        letterSpacing: '0.08em',
+                                        textTransform: 'uppercase'
+                                      }}>
+                                        {sub.name}
+                                      </span>
+                                    </div>
+                                    {sub.hasSubgroups && (
+                                      <span style={{
+                                        fontSize: '0.62rem',
+                                        color: 'rgba(255, 255, 255, 0.55)',
+                                        backgroundColor: 'rgba(255, 255, 255, 0.06)',
+                                        padding: '0.15rem 0.45rem',
+                                        borderRadius: '10px',
+                                        letterSpacing: '0.05em'
+                                      }}>
+                                        {sub.workstreams?.length} items
+                                      </span>
+                                    )}
+                                  </div>
 
-                                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
-                                  <span style={{
-                                    fontSize: '0.78rem',
-                                    color: 'rgba(255,255,255,0.95)',
-                                    fontWeight: 600,
-                                    letterSpacing: '0.04em',
-                                    lineHeight: 1.3
-                                  }}>
-                                    {ws.name}
-                                  </span>
-                                  <p style={{
-                                    fontSize: '0.73rem',
-                                    color: 'rgba(255,255,255,0.65)',
-                                    lineHeight: 1.45,
-                                    margin: 0,
-                                    fontWeight: 400
-                                  }}>
-                                    {ws.desc}
-                                  </p>
+                                  {/* Subgroup Workstreams (if any) or Single Description */}
+                                  {sub.hasSubgroups && sub.workstreams ? (
+                                    <div style={{
+                                      display: 'grid',
+                                      gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                                      gap: '0.75rem 1.25rem',
+                                      paddingLeft: '0.5rem'
+                                    }}>
+                                      {sub.workstreams.map((ws, wsIdx) => (
+                                        <div 
+                                          key={wsIdx} 
+                                          style={{ 
+                                            display: 'flex', 
+                                            alignItems: 'flex-start', 
+                                            position: 'relative',
+                                            paddingLeft: '1rem',
+                                            borderLeft: '1.5px solid rgba(212, 183, 118, 0.3)'
+                                          }}
+                                        >
+                                          <div style={{
+                                            position: 'absolute',
+                                            left: '-3px',
+                                            top: '6px',
+                                            width: '5px',
+                                            height: '5px',
+                                            borderRadius: '50%',
+                                            backgroundColor: '#D4B776'
+                                          }}></div>
+                                          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.15rem' }}>
+                                            <span style={{
+                                              fontSize: '0.72rem',
+                                              color: 'rgba(255,255,255,0.95)',
+                                              fontWeight: 600,
+                                              letterSpacing: '0.03em',
+                                              lineHeight: 1.3
+                                            }}>
+                                              {ws.name}
+                                            </span>
+                                            <p style={{
+                                              fontSize: '0.68rem',
+                                              color: 'rgba(255,255,255,0.6)',
+                                              lineHeight: 1.4,
+                                              margin: 0,
+                                              fontWeight: 400
+                                            }}>
+                                              {ws.desc}
+                                            </p>
+                                          </div>
+                                        </div>
+                                      ))}
+                                    </div>
+                                  ) : (
+                                    <p style={{
+                                      fontSize: '0.73rem',
+                                      color: 'rgba(255,255,255,0.7)',
+                                      lineHeight: 1.45,
+                                      margin: 0,
+                                      paddingLeft: '0.5rem',
+                                      fontStyle: 'normal'
+                                    }}>
+                                      {sub.desc}
+                                    </p>
+                                  )}
                                 </div>
-                              </div>
-                            ))}
-                          </div>
+                              ))}
+                            </div>
+                          ) : (
+                            <div style={{
+                              display: 'grid',
+                              gridTemplateColumns: (cat.workstreams && cat.workstreams.length > 4) ? 'repeat(auto-fit, minmax(240px, 1fr))' : '1fr',
+                              gap: '1.1rem 1.75rem',
+                              paddingTop: '1.5rem',
+                              paddingBottom: '0.5rem'
+                            }}>
+                              {cat.workstreams?.map((ws, idx) => (
+                                <div 
+                                  key={idx} 
+                                  style={{ 
+                                    display: 'flex', 
+                                    alignItems: 'flex-start', 
+                                    position: 'relative',
+                                    paddingLeft: '1.25rem',
+                                    borderLeft: '2px solid rgba(212, 183, 118, 0.35)'
+                                  }}
+                                >
+                                  {/* Horizontal connector node dot */}
+                                  <div style={{
+                                    position: 'absolute',
+                                    left: '-4px',
+                                    top: '7px',
+                                    width: '6px',
+                                    height: '6px',
+                                    borderRadius: '50%',
+                                    backgroundColor: '#D4B776',
+                                    boxShadow: '0 0 6px rgba(212, 183, 118, 0.6)'
+                                  }}></div>
+
+                                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
+                                    <span style={{
+                                      fontSize: '0.78rem',
+                                      color: 'rgba(255,255,255,0.95)',
+                                      fontWeight: 600,
+                                      letterSpacing: '0.04em',
+                                      lineHeight: 1.3
+                                    }}>
+                                      {ws.name}
+                                    </span>
+                                    <p style={{
+                                      fontSize: '0.73rem',
+                                      color: 'rgba(255,255,255,0.65)',
+                                      lineHeight: 1.45,
+                                      margin: 0,
+                                      fontWeight: 400
+                                    }}>
+                                      {ws.desc}
+                                    </p>
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          )}
                         </div>
                       </div>
 
@@ -549,18 +689,6 @@ export default function ServicesPage() {
               </div>
 
               {/* Item 3 */}
-              <div style={{ display: 'flex', alignItems: 'center', marginTop: '1.5rem' }}>
-                <div style={{ width: '2rem', height: '2px', backgroundColor: '#152845' }}></div>
-                <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#152845', marginLeft: '-1px' }}></div>
-                <div style={{ display: 'flex', alignItems: 'center', marginLeft: '1.5rem', gap: '1rem' }}>
-                  <div style={{ width: '3.5rem', height: '3.5rem', borderRadius: '50%', backgroundColor: '#f0f5f9', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#152845" strokeWidth="1.5"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                  </div>
-                  <span style={{ color: '#152845', fontWeight: 500, fontSize: '0.95rem', letterSpacing: '0.05em' }}>TAX RESIDENCY CERTIFICATE</span>
-                </div>
-              </div>
-
-              {/* Item 4 */}
               <div style={{ display: 'flex', alignItems: 'center', marginTop: '1.5rem' }}>
                 <div style={{ width: '2rem', height: '2px', backgroundColor: '#152845' }}></div>
                 <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#152845', marginLeft: '-1px' }}></div>
