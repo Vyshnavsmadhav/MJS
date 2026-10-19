@@ -311,7 +311,7 @@ export default function AboutUs() {
               lineHeight: 1.6, 
               margin: 0 
             }}>
-              Seasoned Big 4 veterans, strategic advisors, and financial partners delivering trusted compliance, tax, and governance across the UAE.
+              Seasoned veterans, strategic advisors, and financial partners delivering trusted compliance, tax, and governance across the UAE.
             </p>
           </div>
 

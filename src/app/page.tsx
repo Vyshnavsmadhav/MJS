@@ -351,12 +351,12 @@ export default function Home() {
                 backgroundColor: '#D4B776'
               }} />
               <div style={{ 
-                fontSize: '0.8rem', 
-                fontWeight: 700, 
+                fontSize: '1.15rem', 
+                fontWeight: 800, 
                 color: '#D4B776', 
                 letterSpacing: '0.15em', 
                 textTransform: 'uppercase',
-                marginBottom: '0.75rem' 
+                marginBottom: '1rem' 
               }}>
                 Our Vision
               </div>
@@ -386,23 +386,23 @@ export default function Home() {
                 left: 0,
                 width: '4px',
                 height: '100%',
-                backgroundColor: '#152845'
+                backgroundColor: '#D4B776'
               }} />
               <div style={{ 
-                fontSize: '0.8rem', 
-                fontWeight: 700, 
-                color: '#152845', 
+                fontSize: '1.15rem', 
+                fontWeight: 800, 
+                color: '#D4B776', 
                 letterSpacing: '0.15em', 
                 textTransform: 'uppercase',
-                marginBottom: '0.75rem' 
+                marginBottom: '1rem' 
               }}>
                 Our Mission
               </div>
               <p style={{
-                fontSize: '1.05rem',
+                fontSize: '1.15rem',
                 lineHeight: 1.7,
-                color: '#334155',
-                fontWeight: 400,
+                color: '#0A1325',
+                fontWeight: 500,
                 margin: 0
               }}>
                 To simplify accounting, tax, and compliance through expertise, integrity, and proactive service; deliver tailored solutions that exceed customer expectations; and empower businesses to grow confidently while building a sustainable future for our clients, our people, and our organization.
