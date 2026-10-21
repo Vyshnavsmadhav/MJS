@@ -174,7 +174,7 @@ export default function Home() {
         </div>
 
         {/* BOTTOM RIGHT QUICK CONTACT ACTION BUTTONS (CIRCULAR ICONS) */}
-        <div style={{
+        <div className="hero-quick-actions" style={{
           position: 'absolute',
           bottom: '2.5rem',
           right: '2.5rem',
@@ -534,7 +534,7 @@ export default function Home() {
 
           {/* Hierarchy Branch Tree Container */}
           <div style={{ width: '100%', maxWidth: '900px' }}>
-            <div style={{ 
+            <div className="hierarchy-branch-line" style={{ 
               borderLeft: '2px solid #152845', 
               marginLeft: '2rem', 
               paddingLeft: '0',
@@ -547,13 +547,13 @@ export default function Home() {
               <div style={{ display: 'flex', alignItems: 'flex-start' }}>
                 {/* Horizontal branch line and connector node */}
                 <div style={{ display: 'flex', alignItems: 'center', marginTop: '1.75rem', flexShrink: 0 }}>
-                  <div style={{ width: '2.5rem', height: '2px', backgroundColor: '#152845' }}></div>
+                  <div style={{ width: '1.75rem', height: '2px', backgroundColor: '#152845' }}></div>
                   <div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#152845', marginLeft: '-2px' }}></div>
                 </div>
 
                 {/* Content Card / Badge */}
-                <div style={{ 
-                  marginLeft: '1.5rem', 
+                <div className="hierarchy-branch-item" style={{ 
+                  marginLeft: '1.25rem', 
                   flex: 1,
                   backgroundColor: '#ffffff',
                   border: '1px solid rgba(21, 40, 69, 0.12)',
@@ -562,7 +562,7 @@ export default function Home() {
                   boxShadow: '0 8px 24px rgba(0,0,0,0.04)',
                   transition: 'all 0.3s ease'
                 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', marginBottom: '1rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
                     <div style={{ 
                       width: '3.5rem', 
                       height: '3.5rem', 
@@ -603,13 +603,13 @@ export default function Home() {
               <div style={{ display: 'flex', alignItems: 'flex-start' }}>
                 {/* Horizontal branch line and connector node */}
                 <div style={{ display: 'flex', alignItems: 'center', marginTop: '1.75rem', flexShrink: 0 }}>
-                  <div style={{ width: '2.5rem', height: '2px', backgroundColor: '#152845' }}></div>
+                  <div style={{ width: '1.75rem', height: '2px', backgroundColor: '#152845' }}></div>
                   <div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#152845', marginLeft: '-2px' }}></div>
                 </div>
 
                 {/* Content Card / Badge */}
-                <div style={{ 
-                  marginLeft: '1.5rem', 
+                <div className="hierarchy-branch-item" style={{ 
+                  marginLeft: '1.25rem', 
                   flex: 1,
                   backgroundColor: '#ffffff',
                   border: '1px solid rgba(21, 40, 69, 0.12)',
@@ -618,7 +618,7 @@ export default function Home() {
                   boxShadow: '0 8px 24px rgba(0,0,0,0.04)',
                   transition: 'all 0.3s ease'
                 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', marginBottom: '1rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
                     <div style={{ 
                       width: '3.5rem', 
                       height: '3.5rem', 
@@ -660,13 +660,13 @@ export default function Home() {
               <div style={{ display: 'flex', alignItems: 'flex-start' }}>
                 {/* Horizontal branch line and connector node */}
                 <div style={{ display: 'flex', alignItems: 'center', marginTop: '1.75rem', flexShrink: 0 }}>
-                  <div style={{ width: '2.5rem', height: '2px', backgroundColor: '#152845' }}></div>
+                  <div style={{ width: '1.75rem', height: '2px', backgroundColor: '#152845' }}></div>
                   <div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#152845', marginLeft: '-2px' }}></div>
                 </div>
 
                 {/* Content Card / Badge */}
-                <div style={{ 
-                  marginLeft: '1.5rem', 
+                <div className="hierarchy-branch-item" style={{ 
+                  marginLeft: '1.25rem', 
                   flex: 1,
                   backgroundColor: '#ffffff',
                   border: '1px solid rgba(21, 40, 69, 0.12)',
@@ -675,7 +675,7 @@ export default function Home() {
                   boxShadow: '0 8px 24px rgba(0,0,0,0.04)',
                   transition: 'all 0.3s ease'
                 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', marginBottom: '1rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
                     <div style={{ 
                       width: '3.5rem', 
                       height: '3.5rem', 

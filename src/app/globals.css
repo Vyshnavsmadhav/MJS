@@ -136,6 +136,12 @@ button {
   .vat-card-wrapper {
     grid-column: span 1 !important;
   }
+  .nav-center-dock {
+    display: none !important;
+  }
+  .mobile-menu-toggle {
+    display: inline-flex !important;
+  }
 }
 
 @media (max-width: 640px) {
@@ -149,6 +155,96 @@ button {
     display: none !important;
   }
   .header-container {
-    padding: 0.8rem 1rem !important;
+    padding: 0.65rem 1rem !important;
+  }
+  .nav-cta-btn {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.78rem !important;
+  }
+  .hero-quick-actions {
+    bottom: 1.25rem !important;
+    right: 1.25rem !important;
+    gap: 0.65rem !important;
+  }
+  .hero-quick-actions a {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  .hierarchy-branch-line {
+    margin-left: 0.5rem !important;
+  }
+  .hierarchy-branch-item {
+    margin-left: 0.75rem !important;
+    padding: 1.25rem 1.25rem !important;
+  }
+  .hierarchy-branch-item p {
+    padding-left: 0 !important;
+    margin-top: 0.75rem !important;
+  }
+  .about-pillars-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .about-pillar-card {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+    padding-bottom: 2rem !important;
+  }
+  .about-values-split {
+    flex-direction: column !important;
+    gap: 2.5rem !important;
+  }
+  .about-values-left {
+    flex: 1 1 100% !important;
+    padding-right: 0 !important;
+  }
+  .contact-layout-split {
+    flex-direction: column !important;
+  }
+  .contact-col-left, .contact-col-right {
+    min-width: 0 !important;
+    width: 100% !important;
+    padding-right: 0 !important;
+  }
+  .contact-details-split {
+    flex-direction: column !important;
+    gap: 1.75rem !important;
+  }
+  .contact-details-split > div:first-child {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+    padding-bottom: 1.5rem !important;
+  }
+  .contact-form-card {
+    padding: 2rem 1.25rem !important;
+  }
+  .contact-form-row {
+    flex-direction: column !important;
+    gap: 1.25rem !important;
+  }
+  .client-showcase-section {
+    height: 80vh !important;
+  }
+  .services-showcase-split {
+    flex-direction: column !important;
+    gap: 2rem !important;
+    padding: 3rem 4% 4rem !important;
+  }
+  .services-pinned-img {
+    position: relative !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 320px !important;
+    min-height: 280px !important;
+    flex: none !important;
+  }
+  .services-root-node {
+    padding: 0.75rem 1.25rem !important;
+    flex-direction: column !important;
+    border-radius: 16px !important;
+    gap: 0.4rem !important;
+  }
+  .services-rail {
+    display: none !important;
   }
 }

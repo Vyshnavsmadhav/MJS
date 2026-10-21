@@ -137,27 +137,27 @@ export default function ContactPage() {
       </section>
 
       {/* SECTION 2 — MAIN CONTACT SECTION */}
-      <section style={{ backgroundColor: 'var(--color-background)', padding: '6rem 5%' }}>
-        <div className={mounted ? 'animate-fade-in-up stagger-1' : ''} style={{ maxWidth: '1300px', margin: '0 auto', display: 'flex', gap: '6%', flexWrap: 'wrap' }}>
+      <section style={{ backgroundColor: 'var(--color-background)', padding: '5rem 5%' }}>
+        <div className={`contact-layout-split ${mounted ? 'animate-fade-in-up stagger-1' : ''}`} style={{ maxWidth: '1300px', margin: '0 auto', display: 'flex', gap: '5%', flexWrap: 'wrap' }}>
           
           {/* LEFT COLUMN — OFFICE INFORMATION */}
-          <div style={{ flex: '1 1 45%', minWidth: '400px', display: 'flex', flexDirection: 'column', paddingRight: '2%' }}>
+          <div className="contact-col-left" style={{ flex: '1 1 45%', minWidth: '320px', display: 'flex', flexDirection: 'column', paddingRight: '2%' }}>
             
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
               <span style={{ fontSize: '0.7rem', letterSpacing: '0.2em', color: 'var(--color-text)', fontWeight: 600 }}>OUR OFFICE</span>
               <div style={{ width: '30px', height: '1.5px', backgroundColor: 'var(--color-accent)' }}></div>
             </div>
             
-            <h2 style={{ fontSize: '2.5rem', color: 'var(--color-primary)', marginBottom: '1.5rem', lineHeight: 1.15 }}>
+            <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.5rem)', color: 'var(--color-primary)', marginBottom: '1.5rem', lineHeight: 1.15 }}>
               Dubai Office
             </h2>
             
-            <p style={{ fontSize: '0.95rem', color: '#555', marginBottom: '3rem', lineHeight: 1.7, maxWidth: '400px' }}>
+            <p style={{ fontSize: '0.95rem', color: '#555', marginBottom: '2.5rem', lineHeight: 1.7, maxWidth: '400px' }}>
               We are based in Dubai and welcome the opportunity to discuss how we can support your business.
             </p>
 
             {/* Contact Details */}
-            <div style={{ display: 'flex', gap: '2rem', marginBottom: '3rem' }}>
+            <div className="contact-details-split" style={{ display: 'flex', gap: '2rem', marginBottom: '2.5rem' }}>
               {/* Address */}
               <div style={{ flex: 1, borderRight: '1px solid rgba(0,0,0,0.08)', paddingRight: '1rem' }}>
                 <div style={{ display: 'flex', gap: '1rem' }}>
@@ -178,7 +178,7 @@ export default function ContactPage() {
               </div>
 
               {/* Email & Phone Container */}
-              <div style={{ flex: 1.5, display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+              <div style={{ flex: 1.5, display: 'flex', flexDirection: 'column', gap: '1.75rem' }}>
                 {/* Email */}
                 <div style={{ display: 'flex', gap: '1rem' }}>
                   <div style={{ width: '24px', height: '24px', borderRadius: '50%', border: '1px solid var(--color-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
@@ -208,19 +208,18 @@ export default function ContactPage() {
               </div>
             </div>
 
-
           </div>
 
           {/* RIGHT COLUMN — CONTACT FORM */}
-          <div style={{ flex: '1 1 45%', minWidth: '400px' }}>
-            <div style={{ backgroundColor: '#F9F9F9', padding: '3rem 3.5rem', borderRadius: '4px' }}>
+          <div className="contact-col-right" style={{ flex: '1 1 45%', minWidth: '320px' }}>
+            <div className="contact-form-card" style={{ backgroundColor: '#F9F9F9', padding: '3rem 3.5rem', borderRadius: '8px' }}>
               
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.25rem' }}>
                 <span style={{ fontSize: '0.7rem', letterSpacing: '0.2em', color: 'var(--color-text)', fontWeight: 600 }}>SEND US A MESSAGE</span>
                 <div style={{ width: '30px', height: '1.5px', backgroundColor: 'var(--color-accent)' }}></div>
               </div>
               
-              <h2 style={{ fontSize: '2.25rem', color: 'var(--color-primary)', marginBottom: '1rem', lineHeight: 1.15 }}>
+              <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.25rem)', color: 'var(--color-primary)', marginBottom: '1rem', lineHeight: 1.15 }}>
                 Get in Touch
               </h2>
               
@@ -238,7 +237,7 @@ export default function ContactPage() {
                 <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                   
                   {/* Row 1 */}
-                  <div style={{ display: 'flex', gap: '1.5rem' }}>
+                  <div className="contact-form-row" style={{ display: 'flex', gap: '1.5rem' }}>
                     <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                       <label htmlFor="name" style={{ fontSize: '0.8rem', color: 'var(--color-primary)', fontWeight: 500 }}>Name *</label>
                       <input 
@@ -266,7 +265,7 @@ export default function ContactPage() {
                   </div>
 
                   {/* Row 2 */}
-                  <div style={{ display: 'flex', gap: '1.5rem' }}>
+                  <div className="contact-form-row" style={{ display: 'flex', gap: '1.5rem' }}>
                     <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                       <label htmlFor="company" style={{ fontSize: '0.8rem', color: 'var(--color-primary)', fontWeight: 500 }}>Company</label>
                       <input 

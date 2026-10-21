@@ -478,7 +478,7 @@ export default function AboutUs() {
         }} />
 
         {/* 4 Pillars / Process Columns Container */}
-        <div style={{ 
+        <div className="about-pillars-grid" style={{ 
           position: 'relative', 
           zIndex: 3, 
           maxWidth: '1440px', 
@@ -491,7 +491,7 @@ export default function AboutUs() {
         }}>
 
           {/* Pillar 1: Dedicated Leadership */}
-          <div style={{ 
+          <div className="about-pillar-card" style={{ 
             display: 'flex', 
             flexDirection: 'column', 
             alignItems: 'center', 
@@ -531,7 +531,7 @@ export default function AboutUs() {
           </div>
 
           {/* Pillar 2: Process Owners Access */}
-          <div style={{ 
+          <div className="about-pillar-card" style={{ 
             display: 'flex', 
             flexDirection: 'column', 
             alignItems: 'center', 
@@ -570,7 +570,7 @@ export default function AboutUs() {
           </div>
 
           {/* Pillar 3: Documentation & ESR Compliance */}
-          <div style={{ 
+          <div className="about-pillar-card" style={{ 
             display: 'flex', 
             flexDirection: 'column', 
             alignItems: 'center', 
@@ -610,7 +610,7 @@ export default function AboutUs() {
           </div>
 
           {/* Pillar 4: Collaborative Execution */}
-          <div style={{ 
+          <div className="about-pillar-card" style={{ 
             display: 'flex', 
             flexDirection: 'column', 
             alignItems: 'center', 
@@ -650,20 +650,18 @@ export default function AboutUs() {
         </div>
       </section>
 
-
-
       {/* SECTION 4 — OUR VALUES */}
-      <section style={{ backgroundColor: '#fff', padding: '6rem 5%' }}>
-        <div className={mounted ? 'animate-fade-in-up stagger-1' : ''} style={{ maxWidth: '1400px', margin: '0 auto', display: 'flex', gap: '3%' }}>
+      <section style={{ backgroundColor: '#fff', padding: '5rem 5%' }}>
+        <div className={`about-values-split ${mounted ? 'animate-fade-in-up stagger-1' : ''}`} style={{ maxWidth: '1400px', margin: '0 auto', display: 'flex', gap: '3%' }}>
           
           {/* Left - 30% */}
-          <div style={{ flex: '0 0 30%', paddingRight: '2%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+          <div className="about-values-left" style={{ flex: '0 0 32%', paddingRight: '2%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
               <span style={{ fontSize: '0.7rem', letterSpacing: '0.2em', color: 'var(--color-text)', fontWeight: 600 }}>OUR VALUES</span>
               <div style={{ width: '40px', height: '1.5px', backgroundColor: 'var(--color-accent)' }}></div>
             </div>
             
-            <h2 style={{ fontSize: '2.75rem', marginBottom: '1.5rem', lineHeight: 1.2 }}>People.<br/>Partnership. Progress.</h2>
+            <h2 style={{ fontSize: 'clamp(2.2rem, 3.5vw, 2.75rem)', marginBottom: '1.5rem', lineHeight: 1.2 }}>People.<br/>Partnership. Progress.</h2>
             
             <p style={{ fontSize: '0.95rem', color: '#555', lineHeight: 1.7 }}>
               We are committed to building long-term relationships with our clients, understanding their business and helping them achieve their goals through dedicated and expert support.
@@ -672,9 +670,9 @@ export default function AboutUs() {
 
           {/* Center - Quote (70%) */}
           <div style={{ flex: '1', display: 'flex', alignItems: 'center' }}>
-            <div style={{ backgroundColor: '#F8FAFC', padding: '4rem 3rem', borderRadius: '12px', border: '1px solid rgba(0,0,0,0.06)', position: 'relative', width: '100%' }}>
+            <div style={{ backgroundColor: '#F8FAFC', padding: 'clamp(2rem, 4vw, 4rem) clamp(1.5rem, 3vw, 3rem)', borderRadius: '12px', border: '1px solid rgba(0,0,0,0.06)', position: 'relative', width: '100%' }}>
               <div style={{ position: 'absolute', top: '2rem', left: '2rem', fontSize: '4rem', color: 'var(--color-accent)', fontFamily: 'var(--font-heading)', lineHeight: 1, opacity: 0.8 }}>“</div>
-              <p style={{ fontSize: '1.5rem', fontFamily: 'var(--font-heading)', fontStyle: 'italic', color: 'var(--color-primary)', lineHeight: 1.4, marginTop: '2rem', marginBottom: '2rem', paddingLeft: '1rem' }}>
+              <p style={{ fontSize: 'clamp(1.2rem, 2vw, 1.5rem)', fontFamily: 'var(--font-heading)', fontStyle: 'italic', color: 'var(--color-primary)', lineHeight: 1.4, marginTop: '2rem', marginBottom: '2rem', paddingLeft: '1rem' }}>
                 Our goal is to be a trusted partner for businesses, providing solutions that create opportunities and support sustainable growth.
               </p>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', paddingLeft: '1rem' }}>

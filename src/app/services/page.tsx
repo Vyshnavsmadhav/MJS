@@ -239,34 +239,37 @@ export default function ServicesPage() {
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
             
             {/* Top Root Node */}
-            <div style={{
+            <div className="services-root-node" style={{
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '1.25rem',
+              gap: '1rem',
               backgroundColor: '#0A1325',
               color: '#FFFFFF',
-              padding: '1.2rem 2.5rem',
+              padding: '1rem 2rem',
               borderRadius: '999px',
               border: '1px solid rgba(212, 183, 118, 0.4)',
               boxShadow: '0 12px 30px rgba(10, 19, 37, 0.15)',
-              zIndex: 3
+              zIndex: 3,
+              maxWidth: '92vw',
+              textAlign: 'center'
             }}>
               <div style={{
                 width: '10px',
                 height: '10px',
                 borderRadius: '50%',
                 backgroundColor: '#D4B776',
-                boxShadow: '0 0 12px #D4B776'
+                boxShadow: '0 0 12px #D4B776',
+                flexShrink: 0
               }} />
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <span style={{ fontSize: '0.68rem', letterSpacing: '0.22em', color: '#D4B776', fontWeight: 700, textTransform: 'uppercase' }}>
                   MJS GLOBAL CORE PRACTICE
                 </span>
-                <span style={{ fontSize: '1.15rem', fontWeight: 600, fontFamily: 'var(--font-heading)', letterSpacing: '0.02em' }}>
+                <span style={{ fontSize: '1.05rem', fontWeight: 600, fontFamily: 'var(--font-heading)', letterSpacing: '0.02em' }}>
                   Client Advisory &amp; Assurance Framework
                 </span>
               </div>
-              <span style={{
+              <span className="services-count-pill" style={{
                 backgroundColor: 'rgba(212, 183, 118, 0.18)',
                 color: '#D4B776',
                 fontSize: '0.72rem',
@@ -274,17 +277,18 @@ export default function ServicesPage() {
                 padding: '0.25rem 0.75rem',
                 borderRadius: '20px',
                 marginLeft: '0.5rem',
-                letterSpacing: '0.08em'
+                letterSpacing: '0.08em',
+                whiteSpace: 'nowrap'
               }}>
                 18 WORKSTREAMS
               </span>
             </div>
 
             {/* Vertical Stem from Root Node */}
-            <div style={{ width: '2px', height: '40px', backgroundColor: '#152845', opacity: 0.35 }}></div>
+            <div style={{ width: '2px', height: '36px', backgroundColor: '#152845', opacity: 0.35 }}></div>
 
             {/* Top Horizontal Distribution Rail for 4 Branches */}
-            <div style={{ width: '100%', position: 'relative', display: 'flex', justifyContent: 'center' }}>
+            <div className="services-rail" style={{ width: '100%', position: 'relative', display: 'flex', justifyContent: 'center' }}>
               <div style={{
                 position: 'absolute',
                 top: 0,
@@ -296,11 +300,11 @@ export default function ServicesPage() {
               }} />
             </div>
 
-            {/* 4 Classification Pillars with Interactive Hover Expansion */}
+            {/* 4 Classification Pillars with Interactive Hover/Tap Expansion */}
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))',
-              gap: '2rem',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: '1.75rem',
               width: '100%',
               alignItems: 'start'
             }}>
@@ -312,11 +316,12 @@ export default function ServicesPage() {
                     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}
                     onMouseEnter={() => setHoveredCard(index)}
                     onMouseLeave={() => setHoveredCard(null)}
+                    onClick={() => setHoveredCard(hoveredCard === index ? null : index)}
                   >
                     {/* Branch vertical connector from rail */}
                     <div style={{ 
                       width: '2px', 
-                      height: '28px', 
+                      height: '24px', 
                       backgroundColor: isHovered ? '#D4B776' : '#152845', 
                       opacity: isHovered ? 1 : 0.25,
                       transition: 'all 0.3s ease'
@@ -332,12 +337,12 @@ export default function ServicesPage() {
                       transition: 'all 0.3s ease'
                     }}></div>
 
-                    {/* Classification Node Card with Hover Expansion */}
+                    {/* Classification Node Card with Tap & Hover Expansion */}
                     <div style={{
                       width: '100%',
                       backgroundColor: cat.bgColor,
                       borderRadius: '16px',
-                      padding: '2.2rem 2rem',
+                      padding: '2rem 1.75rem',
                       display: 'flex',
                       flexDirection: 'column',
                       border: isHovered ? '1px solid rgba(212, 183, 118, 0.45)' : '1px solid rgba(255, 255, 255, 0.08)',
@@ -602,7 +607,7 @@ export default function ServicesPage() {
                           fontWeight: 600,
                           transition: 'opacity 0.2s ease'
                         }}>
-                          <span>Hover to view workstreams</span>
+                          <span>Tap or hover to view workstreams</span>
                           <span>→</span>
                         </div>
                       )}
@@ -617,7 +622,7 @@ export default function ServicesPage() {
       </section>
 
       {/* SECTION — HIERARCHY SERVICES SHOWCASE (PINNED IMAGE & SERVICE TREE) */}
-      <section style={{ 
+      <section className="services-showcase-split" style={{ 
         backgroundColor: '#fff', 
         padding: '4rem 5% 5rem', 
         display: 'flex', 
@@ -630,13 +635,13 @@ export default function ServicesPage() {
         position: 'relative' 
       }}>
         {/* Sticky Pinned Image Container */}
-        <div style={{
+        <div className="services-pinned-img" style={{
           position: 'sticky',
           top: '5.5rem',
-          flex: '1 1 400px',
+          flex: '1 1 380px',
           maxWidth: '560px',
           height: 'calc(100vh - 7rem)',
-          minHeight: '520px',
+          minHeight: '480px',
           borderRadius: '16px',
           overflow: 'hidden',
           boxShadow: '0 12px 35px rgba(0,0,0,0.12)'
