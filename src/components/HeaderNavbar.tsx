@@ -111,8 +111,8 @@ export default function HeaderNavbar() {
           style={{ 
             display: 'flex', 
             gap: '0.4rem', 
-            fontSize: '0.88rem', 
-            fontWeight: 600, 
+            fontSize: '0.9rem', 
+            fontWeight: 700, 
             alignItems: 'center',
             backgroundColor: 'rgba(255, 255, 255, 0.08)',
             padding: '0.35rem 0.5rem',
@@ -129,10 +129,12 @@ export default function HeaderNavbar() {
                 href={item.path}
                 style={{
                   position: 'relative',
-                  color: isActive ? '#07162C' : 'rgba(255, 255, 255, 0.78)',
+                  color: isActive ? '#07162C' : 'rgba(255, 255, 255, 0.85)',
                   backgroundColor: isActive ? '#FFFFFF' : 'transparent',
                   padding: '0.5rem 1.15rem',
                   borderRadius: '999px',
+                  fontWeight: 700,
+                  letterSpacing: '0.01em',
                   transition: 'all 0.25s ease',
                   display: 'inline-flex',
                   alignItems: 'center',
@@ -147,7 +149,7 @@ export default function HeaderNavbar() {
                 }}
                 onMouseLeave={(e) => {
                   if (!isActive) {
-                    e.currentTarget.style.color = 'rgba(255, 255, 255, 0.78)';
+                    e.currentTarget.style.color = 'rgba(255, 255, 255, 0.85)';
                     e.currentTarget.style.backgroundColor = 'transparent';
                   }
                 }}
@@ -298,7 +300,7 @@ export default function HeaderNavbar() {
                   backgroundColor: isActive ? 'rgba(212, 183, 118, 0.15)' : 'rgba(255, 255, 255, 0.03)',
                   border: isActive ? '1px solid rgba(212, 183, 118, 0.35)' : '1px solid rgba(255, 255, 255, 0.05)',
                   color: isActive ? '#D4B776' : '#FFFFFF',
-                  fontWeight: 600,
+                  fontWeight: 700,
                   fontSize: '1rem',
                   display: 'flex',
                   alignItems: 'center',
