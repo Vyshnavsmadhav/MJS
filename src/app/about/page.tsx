@@ -416,15 +416,29 @@ export default function AboutUs() {
               <div style={{ width: '100%', height: '1px', backgroundColor: 'rgba(21, 40, 69, 0.08)', marginBottom: '1.25rem' }} />
 
               {/* Bio */}
-              <p style={{ 
+              <div style={{ 
                 fontSize: '0.9rem', 
                 color: '#556377', 
                 lineHeight: 1.7, 
                 margin: 0,
-                flexGrow: 1
+                flexGrow: 1,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1rem'
               }}>
-                Pradeep is a seasoned tax expert with an MBA and over 13 years of experience across India and the Middle East. Having worked with multiple Big 4 firms, he is a key member of MJS Global, bringing strong expertise in finance, tax, and compliance, with a focus on quick turnaround and quality solutions.
-              </p>
+                <p style={{ margin: 0 }}>
+                  A seasoned tax professional with an MBA and over 13 years of experience across India and the Middle East, bringing strong expertise in accounting, taxation, auditing, and regulatory compliance, with a particular focus on the UAE market.
+                </p>
+                <p style={{ margin: 0 }}>
+                  Having provided professional consultancy services to more than 150 clients over 11 years, he has developed extensive experience in delivering tailored financial and tax solutions that address diverse business requirements. His expertise encompasses tax advisory, accounting management, audit coordination, compliance, and financial reporting, with an emphasis on accuracy, efficiency, and regulatory adherence.
+                </p>
+                <p style={{ margin: 0 }}>
+                  As a key member of MJS Global, he contributes valuable expertise in finance, taxation, and compliance, supporting clients in navigating complex regulatory requirements and making informed business decisions. Known for a practical, client-focused approach, he prioritises quick turnaround times, high-quality deliverables, and dependable professional service.
+                </p>
+                <p style={{ margin: 0 }}>
+                  With a commitment to continuous improvement, client satisfaction, and long-term business relationships, he strives to deliver solutions that strengthen financial management, ensure compliance, and support sustainable business growth.
+                </p>
+              </div>
             </div>
 
           </div>
